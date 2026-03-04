@@ -234,7 +234,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Enemy
   enemy: {fileID: 0}
-  ball: {fileID: 8573825367862583625}
+  ball: {fileID: 0}
 --- !u!1 &5283355192171870448
 GameObject:
   m_ObjectHideFlags: 0
@@ -539,6 +539,7 @@ GameObject:
   - component: {fileID: 5759296965409476166}
   - component: {fileID: 8140598620678211163}
   - component: {fileID: 1971858584094182267}
+  - component: {fileID: 2174726109588228118}
   m_Layer: 0
   m_Name: BALL
   m_TagString: Untagged
@@ -764,3 +765,17 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.005
   m_Center: {x: 0.0000000013969838, y: 0, z: -0.000000001862645}
+--- !u!114 &2174726109588228118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8573825367862583625}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7db8cf5c76beef44bf5c5424d3c298c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Enemy
+  enemy: {fileID: 0}
+  ball: {fileID: 0}
