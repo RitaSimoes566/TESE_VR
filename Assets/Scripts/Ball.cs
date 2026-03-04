@@ -3,9 +3,11 @@ using UnityEngine.UI;
 using TMPro;
 using System;
 
-public class Enemy : MonoBehaviour
+public class Ball : MonoBehaviour
 {
     public GameObject enemy;
+    private EnemySpawn mi;
+
     public GameObject ball;
     public TextMeshProUGUI text;
     int score = 0;
@@ -28,10 +30,13 @@ public class Enemy : MonoBehaviour
 
         if (other.gameObject == enemy)
         {
+            Destroy(enemy);
             Debug.Log("hi");
             ball.transform.position = startPos;
             score += 1;
             text.SetText("Pontuação: " + score);
+            mi.Spawn();
+
         }
     }
 }
