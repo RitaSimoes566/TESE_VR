@@ -454,6 +454,7 @@ GameObject:
   - component: {fileID: 189336842}
   - component: {fileID: 189336844}
   - component: {fileID: 189336843}
+  - component: {fileID: 189336845}
   m_Layer: 0
   m_Name: Particle System
   m_TagString: Untagged
@@ -5279,6 +5280,19 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
+--- !u!114 &189336845
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 189336841}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2464e7183ed11004599417dcff387aae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HurtParticles
+  hurtParticles: {fileID: 189336844}
 --- !u!1 &227820003
 GameObject:
   m_ObjectHideFlags: 0
@@ -5911,6 +5925,10 @@ PrefabInstance:
       propertyPath: enemyModel
       value: 
       objectReference: {fileID: 1414407784}
+    - target: {fileID: 6977019130004728192, guid: ef0c72842a0223c4c91654181fb7ae64, type: 3}
+      propertyPath: particlesHurt
+      value: 
+      objectReference: {fileID: 189336845}
     - target: {fileID: 8573825367862583625, guid: ef0c72842a0223c4c91654181fb7ae64, type: 3}
       propertyPath: m_Name
       value: BALL

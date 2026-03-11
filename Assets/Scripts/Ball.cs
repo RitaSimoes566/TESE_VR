@@ -71,7 +71,7 @@ public class Ball : MonoBehaviour
        
         posX = Random.Range(-6, 1);
         posZ = Random.Range(6, 9);
-        enem.transform.position = new Vector3(posX, 1, posZ);
+        enem.transform.position = new Vector3(posX, 0, posZ);
 
 
     }
