@@ -69,6 +69,7 @@ MonoBehaviour:
   ball: {fileID: 8573825367862583625}
   enemyModel: {fileID: 0}
   text: {fileID: 0}
+  gFloor: {fileID: 0}
   particlesHurt: {fileID: 0}
 --- !u!1 &5622413661369374645
 GameObject:

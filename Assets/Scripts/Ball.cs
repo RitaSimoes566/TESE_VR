@@ -9,6 +9,7 @@ public class Ball : MonoBehaviour
     public GameObject ball;
     public GameObject enemyModel;
     public TextMeshProUGUI text;
+    public GameObject gFloor;
 
     private Rigidbody ballRB;
     int score = 0;
@@ -49,6 +50,11 @@ public class Ball : MonoBehaviour
             text.SetText("Pontuação: " + score);
 
         }
+
+        if (other.gameObject == gFloor)
+        {
+            ResetBall();
+        }
     }
 
     private void OnTriggerExit(Collider other)
@@ -59,7 +65,7 @@ public class Ball : MonoBehaviour
 
     public void ResetBall()
     {
-        Vector3 startPos = new Vector3(-1, 1, 3);
+        Vector3 startPos = new Vector3(-0.9f, 1.2f, 5.3f);
 
         ballRB.linearVelocity = Vector3.zero;
         ballRB.angularVelocity = Vector3.zero;
