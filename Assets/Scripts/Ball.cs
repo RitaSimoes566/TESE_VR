@@ -8,7 +8,6 @@ public class Ball : MonoBehaviour
 
     public GameObject ball;
     public GameObject enemyModel;
-    public TextMeshProUGUI text;
     public GameObject gFloor;
 
     private Rigidbody ballRB;
@@ -20,12 +19,6 @@ public class Ball : MonoBehaviour
     private void Awake()
     {
         ballRB = ball.GetComponent<Rigidbody>();
-    }
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        text.SetText("Pontuação: " + score);
     }
 
     // Update is called once per frame
@@ -47,8 +40,6 @@ public class Ball : MonoBehaviour
             ResetBall();
 
             score += 1;
-            text.SetText("Pontuação: " + score);
-
         }
 
         if (other.gameObject == gFloor)

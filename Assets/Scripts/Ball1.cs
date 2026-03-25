@@ -27,7 +27,7 @@ public class Ball_b : MonoBehaviour
     private Rigidbody ballRB;
     private FirstGrabGravity ballGra;
 
-    int score = 0;
+    public int score = 0;
     public float speed = 0.3f;
 
     float posX, posZ;
@@ -37,6 +37,8 @@ public class Ball_b : MonoBehaviour
     public float hurtDuration = 0.5f;   // length of hurt anim (seconds)
     private bool isMoving = false;
     private Vector3 moveTarget;
+
+    public AudioManager scoreAudio;
 
     private void Awake()
     {
@@ -53,11 +55,6 @@ public class Ball_b : MonoBehaviour
 
     }
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        text.SetText("Pontuação: " + score);
-    }
 
     private void Update()
     {
@@ -65,6 +62,7 @@ public class Ball_b : MonoBehaviour
         {
             hurtDuration -= Time.deltaTime;
             Debug.Log("im preparing to run");
+            isMoving = false;
 
         }
         if (hurtDuration <= 0)
@@ -91,6 +89,11 @@ public class Ball_b : MonoBehaviour
     {
         if (other.gameObject == enemyModel)
         {
+            if (score < 5)
+            {
+                scoreAudio.ScoreIncrease();
+            }
+
             Debug.Log("hi");
             startTimer = true;
 
@@ -101,7 +104,6 @@ public class Ball_b : MonoBehaviour
             ResetBallB();
 
             score += 1;
-            text.SetText("Pontuação: " + score);
 
         }
 
@@ -120,17 +122,13 @@ public class Ball_b : MonoBehaviour
     public void ResetBallB()
     {
         float rx = Random.Range(-5, 0);
-        Vector3 startPos = new Vector3(rx, 1.44f, 5);
+        Vector3 startPos = new Vector3(rx, 2.25f, 5);
 
         ballGra.firstGrabDone = false;
         ballRB.useGravity = false;
         ballRB.linearVelocity = Vector3.zero;
         ballRB.angularVelocity = Vector3.zero;
         ball.transform.position = startPos;
-
-        //enemyAnim.SetBool("isHurt", false);
-
-
     }
 
     public void RunToTarget()
@@ -152,7 +150,4 @@ public class Ball_b : MonoBehaviour
 
             }
     }
-
-    
-
 }
