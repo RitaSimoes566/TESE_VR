@@ -122,7 +122,7 @@ public class Ball_b : MonoBehaviour
     public void ResetBallB()
     {
         float rx = Random.Range(-5, 0);
-        Vector3 startPos = new Vector3(rx, 2.25f, 5);
+        Vector3 startPos = new Vector3(rx, 2.26f, 4.5f);
 
         ballGra.firstGrabDone = false;
         ballRB.useGravity = false;
