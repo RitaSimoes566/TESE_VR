@@ -618,6 +618,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c875fa54f71b2a0469af20b7c863b87e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Flying
+  player: {fileID: 8540450840075704870}
   warnBlock: {fileID: 1950403876}
   score: 0
 --- !u!1 &1802371124
@@ -938,6 +939,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1578908968}
     m_Modifications:
+    - target: {fileID: 977371593433796456, guid: a68198f6bb8968a4a9a0fd2c258c7424, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3418949619780713985, guid: a68198f6bb8968a4a9a0fd2c258c7424, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.62
@@ -1272,9 +1277,17 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -23
       objectReference: {fileID: 0}
+    - target: {fileID: 2120092245077620747, guid: 6eccd98b0b741f1408515fd89500a49d, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6684567543971068604, guid: 6eccd98b0b741f1408515fd89500a49d, type: 3}
       propertyPath: m_Name
       value: XR Origin Hands (XR Rig)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6684567543971068604, guid: 6eccd98b0b741f1408515fd89500a49d, type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 6684567543971068607, guid: 6eccd98b0b741f1408515fd89500a49d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1321,6 +1334,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6eccd98b0b741f1408515fd89500a49d, type: 3}
+--- !u!1 &8540450840075704870 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6684567543971068604, guid: 6eccd98b0b741f1408515fd89500a49d, type: 3}
+  m_PrefabInstance: {fileID: 8540450840075704869}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

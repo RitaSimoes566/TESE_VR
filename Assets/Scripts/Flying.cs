@@ -3,56 +3,76 @@ using System.Collections;
 
 public class Flying : MonoBehaviour
 {
+    public GameObject player;
     public GameObject warnBlock;
     private Animator flyAnim;
     private Animator warningAnim;
 
-    private bool isWarning;
-    private bool isBlock;
     private int direction;
     public int score;
 
+    private bool hitBlock;
+    private bool isBlock;
+    //private bool isScored;
+
     void Awake()
     {
+
         flyAnim = GetComponent<Animator>();
-
         warningAnim = warnBlock.GetComponent<Animator>();
+        isBlock = false;
+        hitBlock = false;
+        //isScored = false;
+
         StartCoroutine(FlyRoutine());
-        isWarning = true;
     }
 
-    private void Update()
+    private void OnTriggerEnter(Collider other)
     {
-        Debug.Log(direction);
-        Debug.Log(warningAnim.GetBool("isWarning"));
+        if (other.CompareTag("Player") && isBlock)
+        {
+            // you have hit the block :(
+            hitBlock = true;
+            Debug.Log("You have hit the block :(");
+
+        }
     }
+
 
     private IEnumerator FlyRoutine()
     {
         while (true)
         {
-            
-            //block wait = 0
-            direction = 0;
-            flyAnim.SetInteger("direction", direction);
+            isBlock = false;
+            hitBlock = false;
 
-            // decide up,left or right
-            // 1 =left ; 2 = right ; 3 = up
+            // Stop block animation / reset state
+            flyAnim.SetInteger("direction", 0);
+
+            // Choose direction: 1 = left, 2 = right, 3 = up
             direction = Random.Range(1, 4);
 
-            //warning anim
-            warningAnim.SetBool("isWarning", true);
+            // Show warning
             warningAnim.SetInteger("direction", direction);
-
-            yield return new WaitForSeconds(3f);
-            warningAnim.SetBool("isWarning", false);
-
-            // block anim
-            flyAnim.SetInteger("direction", direction);
-            yield return new WaitForSeconds(3f);
             warningAnim.SetBool("isWarning", true);
 
-            // set score
+            yield return new WaitForSeconds(5f);
+
+            // Hide warning
+            warningAnim.SetBool("isWarning", false);
+            warningAnim.SetInteger("direction", 0);
+
+            // Start block animation
+            isBlock = true;
+            flyAnim.SetInteger("direction", direction);
+
+            yield return new WaitForSeconds(5f);
+
+            if (!hitBlock) 
+            {
+                score += 1;
+            }
+            
         }
     }
 }
