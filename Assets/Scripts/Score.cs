@@ -35,7 +35,7 @@ public class Score : MonoBehaviour
             
             for (int i = 0; i < starImages.Length; i++)
             {
-                if (i < ball.score)              // e.g. score = 2 → first 2 stars yellow
+                if (i < ball.score)        
                     starImages[i].sprite = yellowStar;
                 else
                     starImages[i].sprite = greyStar;

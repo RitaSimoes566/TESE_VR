@@ -1,47 +1,54 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.XR.Management;
+using UnityEngine.XR;
+using Unity.XR.CoreUtils;
+using System.Collections.Generic;
+using UnityEngine.InputSystem;
 
-public class Flying : MonoBehaviour
-{
+public class Flying : MonoBehaviour {
+
     public GameObject player;
     public GameObject warnBlock;
+
     private Animator flyAnim;
     private Animator warningAnim;
 
     private int direction;
-    public int score;
+    public int score = 0;
 
     private bool hitBlock;
     private bool isBlock;
     //private bool isScored;
 
+    public AudioManager scoreAudio;
+
     void Awake()
     {
-
+        score = 0;
         flyAnim = GetComponent<Animator>();
         warningAnim = warnBlock.GetComponent<Animator>();
         isBlock = false;
         hitBlock = false;
-        //isScored = false;
 
         StartCoroutine(FlyRoutine());
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player") && isBlock)
-        {
-            // you have hit the block :(
-            hitBlock = true;
-            Debug.Log("You have hit the block :(");
+            if (other.CompareTag("Player") && isBlock)
+            {
+                // you have hit the block :(
+                hitBlock = true;
+                Debug.Log("You have hit the block :(");
 
-        }
+            }
     }
 
 
-    private IEnumerator FlyRoutine()
+    public IEnumerator FlyRoutine()
     {
-        while (true)
+        while (score < 5)
         {
             isBlock = false;
             hitBlock = false;
@@ -71,6 +78,7 @@ public class Flying : MonoBehaviour
             if (!hitBlock) 
             {
                 score += 1;
+                scoreAudio.ScoreIncrease();
             }
             
         }

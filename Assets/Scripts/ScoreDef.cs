@@ -15,15 +15,10 @@ public class ScoreDef : MonoBehaviour
     public AudioManager scoreAudio;
     bool isVictory = false;
 
-    private Flying fly;
-    public int score;
-
-    //public int score;
+    public Flying fly;
 
     void Awake()
     {
-        score = fly.score;
-
         // all stars start grey
         ResetScore();
         txt.SetText("PONTUAÇÃO:");
@@ -75,6 +70,8 @@ public class ScoreDef : MonoBehaviour
 
         txt.SetText("PONTUAÇÃO:");
         isVictory = false;
+
+        StartCoroutine(fly.FlyRoutine());
 
     }
 

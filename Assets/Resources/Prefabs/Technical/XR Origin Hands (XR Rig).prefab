@@ -22579,7 +22579,7 @@ GameObject:
   - component: {fileID: 1065272661747025648}
   m_Layer: 2
   m_Name: XR Origin Hands (XR Rig)
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -22617,7 +22617,7 @@ MonoBehaviour:
   m_Camera: {fileID: 5409733899362001894}
   m_OriginBaseGameObject: {fileID: 6684567543971068604}
   m_CameraFloorOffsetObject: {fileID: 5409733899307925443}
-  m_RequestedTrackingOriginMode: 0
+  m_RequestedTrackingOriginMode: 2
   m_CameraYOffset: 1.36144
 --- !u!143 &2120092245077620747
 CharacterController:
