@@ -36,7 +36,9 @@ public class Flying : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
-            if (other.CompareTag("Player") && isBlock)
+        Debug.Log("Triggered by: " + other.gameObject.name);
+
+        if (other.CompareTag("Player") && isBlock && !hitBlock)
             {
                 // you have hit the block :(
                 hitBlock = true;
@@ -50,8 +52,8 @@ public class Flying : MonoBehaviour {
     {
         while (score < 5)
         {
-            isBlock = false;
             hitBlock = false;
+            isBlock = false;
 
             // Stop block animation / reset state
             flyAnim.SetInteger("direction", 0);
@@ -80,7 +82,8 @@ public class Flying : MonoBehaviour {
                 score += 1;
                 scoreAudio.ScoreIncrease();
             }
-            
+
+
         }
     }
 }
