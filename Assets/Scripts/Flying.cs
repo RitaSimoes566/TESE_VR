@@ -1,4 +1,6 @@
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 using System.Collections;
 using UnityEngine.XR.Management;
 using UnityEngine.XR;
@@ -10,6 +12,7 @@ public class Flying : MonoBehaviour {
 
     public GameObject player;
     public GameObject warnBlock;
+    [SerializeField] private TextMeshProUGUI momText;
 
     private Animator flyAnim;
     private Animator warningAnim;
@@ -21,6 +24,7 @@ public class Flying : MonoBehaviour {
     private bool isBlock;
     //private bool isScored;
 
+    public List<string> momDialogue;
     public AudioManager scoreAudio;
 
     void Awake()
@@ -30,6 +34,7 @@ public class Flying : MonoBehaviour {
         warningAnim = warnBlock.GetComponent<Animator>();
         isBlock = false;
         hitBlock = false;
+        momText.SetText(momDialogue[0]);
 
         StartCoroutine(FlyRoutine());
     }
@@ -52,6 +57,7 @@ public class Flying : MonoBehaviour {
     {
         while (score < 5)
         {
+            momText.SetText(momDialogue[0]);
             hitBlock = false;
             isBlock = false;
 
@@ -60,6 +66,8 @@ public class Flying : MonoBehaviour {
 
             // Choose direction: 1 = left, 2 = right, 3 = up
             direction = Random.Range(1, 4);
+            int r = Random.Range(1, 3);
+            SetMotherDialogue(r, 2+ direction);
 
             // Show warning
             warningAnim.SetInteger("direction", direction);
@@ -70,6 +78,7 @@ public class Flying : MonoBehaviour {
             // Hide warning
             warningAnim.SetBool("isWarning", false);
             warningAnim.SetInteger("direction", 0);
+            momText.SetText(momDialogue[0]);
 
             // Start block animation
             isBlock = true;
@@ -82,8 +91,12 @@ public class Flying : MonoBehaviour {
                 score += 1;
                 scoreAudio.ScoreIncrease();
             }
-
-
         }
     }
+
+    void SetMotherDialogue(int n, int m)
+    {
+        momText.SetText(momDialogue[n] + "\n" + momDialogue[m]);
+    }
 }
+
