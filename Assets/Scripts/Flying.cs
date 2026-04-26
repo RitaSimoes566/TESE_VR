@@ -10,9 +10,10 @@ using UnityEngine.InputSystem;
 
 public class Flying : MonoBehaviour {
 
-    public GameObject player;
-    public GameObject warnBlock;
+    [SerializeField] private GameObject player;
+    [SerializeField] private GameObject warnBlock;
     [SerializeField] private TextMeshProUGUI momText;
+    private CapsuleCollider playerCol;
 
     private Animator flyAnim;
     private Animator warningAnim;
@@ -30,6 +31,8 @@ public class Flying : MonoBehaviour {
     void Awake()
     {
         score = 0;
+
+        playerCol = player.GetComponent<CapsuleCollider>();
         flyAnim = GetComponent<Animator>();
         warningAnim = warnBlock.GetComponent<Animator>();
         isBlock = false;
@@ -41,9 +44,9 @@ public class Flying : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Triggered by: " + other.gameObject.name);
+        //Debug.Log($"Triggered by: {other.name}, root: {other.transform.root.name}, tag: {other.tag}");
 
-        if (other.CompareTag("Player") && isBlock && !hitBlock)
+        if (other == playerCol && isBlock && !hitBlock)
             {
                 // you have hit the block :(
                 hitBlock = true;
