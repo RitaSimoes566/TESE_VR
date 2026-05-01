@@ -71,6 +71,7 @@ public class ScoreDef : MonoBehaviour
         txt.SetText("PONTUAÇÃO:");
         isVictory = false;
 
+        StopAllCoroutines();
         StartCoroutine(fly.FlyRoutine());
 
     }

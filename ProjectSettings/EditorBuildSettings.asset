@@ -8,15 +8,18 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 55daccc09a3b69647bbab145b54a3ab3
-  - enabled: 1
-    path: Assets/Scenes/ATTACK/ATTACK_BASKET.unity
-    guid: 4a4e8b41e16bf51449ae8f04f104217a
   - enabled: 0
     path: Assets/Scenes/ATTACK/ATTACK_GRAB.unity
     guid: f5dca33feca7d02459ef4160bf856314
   - enabled: 1
+    path: Assets/Scenes/DEFENSE/Defense.unity
+    guid: 8538a24eee5aed24799ce551a8654c48
+  - enabled: 1
     path: Assets/Scenes/ATTACK/ATTACK_BRANCH.unity
     guid: 0f5d22008029933419661cb151787346
+  - enabled: 1
+    path: Assets/Scenes/ATTACK/ATTACK_BASKET.unity
+    guid: 4a4e8b41e16bf51449ae8f04f104217a
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: bfa1182bd221b4ca89619141f66f1260, type: 2}
     Unity.XR.WindowsMR.Settings: {fileID: 11400000, guid: dc5a169419fa04987b057f65238cf3ba, type: 2}
