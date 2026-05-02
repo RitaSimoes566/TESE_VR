@@ -3,8 +3,6 @@ using Unity.XR.CoreUtils;
 
 public class PlayerHeight : MonoBehaviour
 {
-    [SerializeField] private float minHeight = 1.0f;
-    [SerializeField] private float maxHeight = 2.5f;
     [SerializeField] private GameObject camOff;
     [SerializeField] private GameObject camMain;
 

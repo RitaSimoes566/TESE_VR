@@ -2,10 +2,17 @@ using UnityEngine;
 
 public class ScoreCollision : MonoBehaviour
 {
-    [SerializeField] private GameObject bees; 
+    private Collider[] beesColl;
+
     void Awake()
     {
-        Physics.IgnoreCollision(bees.GetComponent<Collider>(), GetComponent<Collider>());
+        GameObject[] bees = GameObject.FindGameObjectsWithTag("Bee");
+        beesColl = new Collider[bees.Length];
+
+        for (int i = 0; i < bees.Length; ++i)
+        {
+            Physics.IgnoreCollision(beesColl[i], GetComponent<Collider>());
+        }
     }
 
 }
