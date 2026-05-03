@@ -4,22 +4,18 @@ using TMPro;
 
 public class Timer : MonoBehaviour
 {
-    [SerializeField] public float targetTime = 120.0f;
-    [SerializeField] private GameObject scoreUI;
-    private TextMeshProUGUI timeDisplay;
+    public float targetTime = 120.0f;
 
-    [SerializeField] private GameObject starObj;
-    private ParticleSystem starPart;
+    [SerializeField] private TextMeshProUGUI timeDisplay;
+    [SerializeField] private ParticleSystem starPart;
+    [SerializeField] private AudioManager audioM;
 
-    private bool isStar;
+    public bool isStar;
     private bool isPaused;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        timeDisplay = scoreUI.GetComponentInChildren<TextMeshProUGUI>();
-        starPart = starObj.GetComponent<ParticleSystem>();
-
         starPart.Stop();
         isStar = false;
         isPaused = true;
@@ -29,14 +25,16 @@ public class Timer : MonoBehaviour
     void Update()
     {
         //countdown
-        if (targetTime >= 0 && !isPaused)
+        if (targetTime > 0 && !isPaused)
         {
             targetTime -= Time.deltaTime;
         }
 
-        if(targetTime < 0)
+        if(targetTime <= 0.0f && !isStar)
         {
             starPart.Play();
+            audioM.Victory();
+            isStar = true;
         }
 
         //display
@@ -52,13 +50,13 @@ public class Timer : MonoBehaviour
             timeDisplay.SetText("Tempo restante: \n" + min + " : 0" + sec.ToString());
         }
 
-        //timeDisplay.SetText("Score: \n" + scoreDisplay.score);
     }
 
     public void ResetTimer()
     {
         targetTime = 120.0f;
         isPaused = false;
+        isStar = false;
     }
 
     public void PauseTimer()

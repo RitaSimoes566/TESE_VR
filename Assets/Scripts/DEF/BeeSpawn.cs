@@ -15,20 +15,20 @@ public class BeeSpawn : MonoBehaviour
 
     public List<GameObject> bees = new List<GameObject>();
 
-    [SerializeField] private GameObject timerUI;
-    [SerializeField] private GameObject scoreUI;
-
-    private TextMeshProUGUI textScore;
-    private Timer timer;
-    bool isPaused;
+    [SerializeField]private TextMeshProUGUI textScore;
+    [SerializeField] private Timer timer;
+    public bool isPaused;
 
     [SerializeField] public int score;
+
+    [SerializeField] private AudioManager audioMan;
 
     private void Awake()
     {
         isPaused = true;
-        timer = timerUI.GetComponent<Timer>();
-        textScore = scoreUI.GetComponent<TextMeshProUGUI>();
+        timer = timer.GetComponent<Timer>();
+        textScore = textScore.GetComponent<TextMeshProUGUI>();
+        audioMan = audioMan.GetComponent<AudioManager>();
         score = 0;
         WriteScore();
     }
@@ -74,6 +74,8 @@ public class BeeSpawn : MonoBehaviour
         bee.transform.position = new Vector3 (posx, posy, posz);
         bee.transform.rotation = Quaternion.Euler (0f , 180f , 0f);
 
+        audioMan.GetAudioOfBee(bee);
+
         bees.Add(bee);
     }
 
@@ -113,9 +115,12 @@ public class BeeSpawn : MonoBehaviour
         for (int i = 0; i < bees.Count; i++)
         {
             Destroy(bees[i]);
+            Destroy(audioMan.beeSource[i]);
         }
 
+        audioMan.beeSource.Clear();
         bees.Clear();
+
         score = 0;
         WriteScore();
 
@@ -156,8 +161,10 @@ public class BeeSpawn : MonoBehaviour
         for (int i = 0; i < bees.Count; i++)
         {
             Destroy(bees[i]);
+            Destroy(audioMan.beeSource[i]);
         }
 
+        audioMan.beeSource.Clear();
         bees.Clear();
     }
 

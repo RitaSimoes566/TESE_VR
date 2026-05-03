@@ -68,8 +68,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8965fb63938a7345a139f318720be47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerHeight
-  minHeight: 1
-  maxHeight: 2.5
   camOff: {fileID: 0}
   camMain: {fileID: 0}
   playerDef: {fileID: 2588667845939818518}
