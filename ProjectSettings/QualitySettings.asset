@@ -346,7 +346,7 @@ QualitySettings:
     globalTextureMipmapLimit: 0
     textureMipmapLimitSettings: []
     anisotropicTextures: 1
-    antiAliasing: 4
+    antiAliasing: 2
     softParticles: 1
     softVegetation: 1
     realtimeReflectionProbes: 1
@@ -354,7 +354,7 @@ QualitySettings:
     useLegacyDetailDistribution: 0
     adaptiveVsync: 0
     vSyncCount: 0
-    realtimeGICPUUsage: 100
+    realtimeGICPUUsage: 50
     adaptiveVsyncExtraA: 0
     adaptiveVsyncExtraB: 0
     lodBias: 2
@@ -385,7 +385,7 @@ QualitySettings:
     excludedTargetPlatforms: []
   m_TextureMipmapLimitGroupNames: []
   m_PerPlatformDefaultQuality:
-    Android: 1
+    Android: 6
     Lumin: 5
     Nintendo 3DS: 5
     Nintendo Switch: 5
@@ -395,7 +395,7 @@ QualitySettings:
     PSP2: 2
     Server: 0
     Stadia: 5
-    Standalone: 5
+    Standalone: 6
     VisionOS: 0
     WebGL: 3
     Windows Store Apps: 5
