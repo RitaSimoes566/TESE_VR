@@ -33,8 +33,19 @@ public class BeeSpawn : MonoBehaviour
         WriteScore();
     }
 
+    //float ms,frs;
     private void Update()
     {
+        /*
+        frs++;
+        ms += Time.deltaTime;
+        if (ms >= 1.0f)
+        {
+            print("----- " + frs);
+            frs = 0;
+            ms = 0;
+        }
+        */
         if (!isPaused && timer.targetTime >=0)
         {
             for (int i = 0; i < bees.Count; i++)

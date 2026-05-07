@@ -129,7 +129,6 @@ GameObject:
   m_Component:
   - component: {fileID: 126421494}
   - component: {fileID: 126421495}
-  - component: {fileID: 126421496}
   m_Layer: 0
   m_Name: Border (3)
   m_TagString: Untagged
@@ -173,33 +172,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 15, y: 13.12, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!54 &126421496
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 126421493}
-  serializedVersion: 5
-  m_Mass: 1
-  m_LinearDamping: 0
-  m_AngularDamping: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 126
-  m_CollisionDetection: 0
 --- !u!1 &173105052
 GameObject:
   m_ObjectHideFlags: 0
@@ -558,10 +530,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 730a023647e10a34db58b94a055521ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BeeSpawn
-  numberBees: 10
+  numberBees: 15
   vel: 5
-  minDelay: 5
-  maxDelay: 10
+  minDelay: 1
+  maxDelay: 2
   beeModel: {fileID: 3353673962353461666, guid: 508d5e231d5b5834b8ac3a36267b7467, type: 3}
   bees: []
   textScore: {fileID: 954504142}
@@ -763,7 +735,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1251035227}
   - component: {fileID: 1251035228}
-  - component: {fileID: 1251035229}
   m_Layer: 0
   m_Name: Border (4)
   m_TagString: Untagged
@@ -807,33 +778,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 15, y: 13.12, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!54 &1251035229
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1251035226}
-  serializedVersion: 5
-  m_Mass: 1
-  m_LinearDamping: 0
-  m_AngularDamping: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 126
-  m_CollisionDetection: 0
 --- !u!1001 &1259175189
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1408,7 +1352,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1615661546}
   - component: {fileID: 1615661547}
-  - component: {fileID: 1615661548}
   m_Layer: 0
   m_Name: Border (1)
   m_TagString: Untagged
@@ -1452,33 +1395,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 31.16, y: 13.12, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!54 &1615661548
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1615661545}
-  serializedVersion: 5
-  m_Mass: 1
-  m_LinearDamping: 0
-  m_AngularDamping: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 126
-  m_CollisionDetection: 0
 --- !u!114 &1731262904 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3599576011041334495, guid: 6950ab1eb146961419c69a23cbb8e8ab, type: 3}
@@ -1552,7 +1468,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2000185797}
   - component: {fileID: 2000185798}
-  - component: {fileID: 2000185799}
   m_Layer: 0
   m_Name: Border (2)
   m_TagString: Untagged
@@ -1596,33 +1511,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 31.16, y: 13.12, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!54 &2000185799
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2000185796}
-  serializedVersion: 5
-  m_Mass: 1
-  m_LinearDamping: 0
-  m_AngularDamping: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 126
-  m_CollisionDetection: 0
 --- !u!1 &2015370072
 GameObject:
   m_ObjectHideFlags: 0
