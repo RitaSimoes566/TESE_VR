@@ -11786,6 +11786,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 807051348}
     m_Modifications:
+    - target: {fileID: 119522249901875906, guid: 085ce58b196caa446a8545c9dd388793, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 272935419427083872, guid: 085ce58b196caa446a8545c9dd388793, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 487833529046422131, guid: 085ce58b196caa446a8545c9dd388793, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -11847,6 +11855,10 @@ PrefabInstance:
       value: Spatial Panel Scroll
       objectReference: {fileID: 0}
     - target: {fileID: 5648130919276084443, guid: 085ce58b196caa446a8545c9dd388793, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5893357932152893177, guid: 085ce58b196caa446a8545c9dd388793, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}

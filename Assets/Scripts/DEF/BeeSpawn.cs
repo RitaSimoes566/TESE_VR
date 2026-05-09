@@ -85,6 +85,9 @@ public class BeeSpawn : MonoBehaviour
         bee.transform.position = new Vector3 (posx, posy, posz);
         bee.transform.rotation = Quaternion.Euler (0f , 180f , 0f);
 
+        ParticleSystem bpart = bee.GetComponentInChildren<ParticleSystem>();
+        bpart.Play();
+
         audioMan.GetAudioOfBee(bee);
 
         bees.Add(bee);
@@ -106,10 +109,10 @@ public class BeeSpawn : MonoBehaviour
 
             vel += 0.05f;
 
-            if (obj.tag == "Bee")
+            if (obj.CompareTag("Bee"))
             {
                 score += 100;
-            } else if (obj.tag == "HitBee")
+            } else if (obj.CompareTag("HitBee"))
             {
                 obj.tag = "Bee";
             }
@@ -132,11 +135,13 @@ public class BeeSpawn : MonoBehaviour
         audioMan.beeSource.Clear();
         bees.Clear();
 
+        vel = 7f;
         score = 0;
         WriteScore();
 
         isPaused = false;
         StartCoroutine(StartSpawnBees());
+        
     }
 
     public void PauseBees()
