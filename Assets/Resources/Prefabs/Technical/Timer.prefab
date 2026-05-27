@@ -5134,7 +5134,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Timer
   targetTime: 120
-  scoreUI: {fileID: 5185430486754101320}
+  timeDisplay: {fileID: 0}
+  starPart: {fileID: 0}
+  audioM: {fileID: 0}
+  isStar: 0
 --- !u!1 &5347281032384843946
 GameObject:
   m_ObjectHideFlags: 0
@@ -5880,7 +5883,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31c78e76303b5ed4ab876a0b2d27215a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ScoreCollision
-  bees: {fileID: 0}
 --- !u!4 &8005621742157329250 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: c6984c48aed9a154294088f4265d8478, type: 3}

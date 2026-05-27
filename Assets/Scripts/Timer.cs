@@ -43,11 +43,11 @@ public class Timer : MonoBehaviour
 
         if (sec >= 10)
         {
-            timeDisplay.SetText("Tempo restante: \n" + min + " : " + sec.ToString());
+            timeDisplay.SetText("0" + min.ToString() + ":" + sec.ToString());
 
         }else
         {
-            timeDisplay.SetText("Tempo restante: \n" + min + " : 0" + sec.ToString());
+            timeDisplay.SetText("0" + min.ToString() + ":0" + sec.ToString());
         }
 
     }

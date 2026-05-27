@@ -80,7 +80,7 @@ public class Ball_b : MonoBehaviour
             RunToTarget();
             
         }
-            Debug.Log(hurtDuration);
+            //Debug.Log(hurtDuration);
     }
 
 
@@ -133,6 +133,7 @@ public class Ball_b : MonoBehaviour
 
     public void RunToTarget()
     {
+
         float step = speed * Time.deltaTime;
 
         moveTarget = new Vector3(posX, 0, posZ);
@@ -140,6 +141,7 @@ public class Ball_b : MonoBehaviour
         enemyModel.transform.position =
                 Vector3.MoveTowards(enemyModel.transform.position, moveTarget, step);
         enemyAnim.SetBool("isRun", true);
+        enemyAnim.SetBool("isHurt", false); // go back to idle
 
         // reached destination?
         if (Vector3.Distance(enemyModel.transform.position, moveTarget) < 0.01f)

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1947332046577788747}
   - component: {fileID: 4956795778032371533}
   - component: {fileID: 3476263332716929313}
+  - component: {fileID: 2455671891529120191}
   m_Layer: 0
   m_Name: BeeModel
   m_TagString: Bee
@@ -83,8 +84,25 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.2, y: 0.7, z: 2.62}
-  m_Center: {x: 0, y: 0.68, z: -1.04}
+  m_Size: {x: 1.45, y: 0.66, z: 0.82}
+  m_Center: {x: -0.03, y: 0.69, z: -0.12}
+--- !u!114 &2455671891529120191
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3353673962353461666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aac2ac0bd01134a46bf58dcff1d42f1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BeeColor
+  isRed: 0
+  rend: {fileID: 0}
+  colorPropertyName: _BaseColor
+  hitColor: {r: 1, g: 0, b: 0, a: 1}
+  hitStrength: 0.85
 --- !u!1 &4824089366898029066
 GameObject:
   m_ObjectHideFlags: 0
@@ -126,7 +144,7 @@ AudioSource:
   m_GameObject: {fileID: 4824089366898029066}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -458910150151053472, guid: 35ab8f27bd9babf49b8e25e1fdee88a9, type: 2}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 0
@@ -138,8 +156,8 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 0.3077814
-  MaxDistance: 500
+  MinDistance: 0.2
+  MaxDistance: 2
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -174,7 +192,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -5076,13 +5094,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7831503235139762075}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0.9991768, z: 0.040567826, w: 0}
-  m_LocalPosition: {x: 0, y: 0.37, z: -0.015}
+  m_LocalRotation: {x: 0, y: 0.9809552, z: -0.19423431, w: 0}
+  m_LocalPosition: {x: -0, y: 0.46, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1947332046577788747}
-  m_LocalEulerAnglesHint: {x: -4.65, y: 180, z: 0}
+  m_LocalEulerAnglesHint: {x: 22.4, y: 180, z: 0}
 --- !u!198 &6189914126716085266
 ParticleSystem:
   m_ObjectHideFlags: 0
@@ -5219,7 +5237,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 2.56
+      scalar: 0.52268696
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -5273,7 +5291,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 1, g: 1, b: 1, a: 1}
+      maxColor: {r: 1, g: 1, b: 1, a: 0.54509807}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -5715,7 +5733,7 @@ ParticleSystem:
     serializedVersion: 6
     enabled: 1
     type: 4
-    angle: 4.72
+    angle: 26.575535
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
     radiusThickness: 0
@@ -5801,7 +5819,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 0.0001
+      value: 0.106917396
       mode: 0
       spread: 0
       speed:
@@ -5920,7 +5938,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 57.54
+      scalar: 8.3
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -5973,7 +5991,7 @@ ParticleSystem:
     rateOverDistance:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 4
+      scalar: 5
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -6037,22 +6055,22 @@ ParticleSystem:
         m_Curve:
         - serializedVersion: 3
           time: 0
-          value: 0.4656067
+          value: 0.57925934
+          inSlope: -1.5009098
+          outSlope: -1.5009098
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0.32098585
+          outWeight: 0.07995155
+        - serializedVersion: 3
+          time: 1
+          value: 0
           inSlope: 0
           outSlope: 0
           tangentMode: 0
           weightedMode: 0
-          inWeight: 0.33333334
-          outWeight: 0.33333334
-        - serializedVersion: 3
-          time: 0.17745972
-          value: 1
-          inSlope: 4.291355
-          outSlope: 4.291355
-          tangentMode: 0
-          weightedMode: 0
-          inWeight: 0.32098585
-          outWeight: 0.33333334
+          inWeight: 0
+          outWeight: 0
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
@@ -7626,7 +7644,7 @@ ParticleSystem:
     magnitude:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1.14
+      scalar: 1
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -7684,7 +7702,7 @@ ParticleSystem:
     drag:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 513.6
+      scalar: 1
       minScalar: 0
       maxCurve:
         serializedVersion: 2

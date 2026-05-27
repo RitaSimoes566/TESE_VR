@@ -12,16 +12,19 @@ public class BeeSpawn : MonoBehaviour
     [SerializeField] float maxDelay = 1.0f;
 
     public GameObject beeModel;
-
     public List<GameObject> bees = new List<GameObject>();
 
-    [SerializeField]private TextMeshProUGUI textScore;
+    [SerializeField] private TextMeshProUGUI textScore;
+    [SerializeField] private TextMeshProUGUI titleScore;
+    [SerializeField] private TextMeshProUGUI titleScore1;
     [SerializeField] private Timer timer;
     public bool isPaused;
 
-    [SerializeField] public int score;
+    public int score;
 
     [SerializeField] private AudioManager audioMan;
+
+    [SerializeField] private BeeColor beeColor;
 
     private void Awake()
     {
@@ -31,6 +34,9 @@ public class BeeSpawn : MonoBehaviour
         audioMan = audioMan.GetComponent<AudioManager>();
         score = 0;
         WriteScore();
+        beeColor = beeModel.GetComponent<BeeColor>();
+        titleScore.SetText("Pontuação");
+        titleScore1.SetText("Pontuação");
     }
 
     //float ms,frs;
@@ -57,7 +63,8 @@ public class BeeSpawn : MonoBehaviour
         if (timer.targetTime <= 0)
         {
             EndBees();
-            textScore.SetText("Conseguiste \n" + score + "pontos!");
+            titleScore.SetText("parabéns");
+            titleScore1.SetText("parabéns");
         }
     }
 
@@ -78,7 +85,7 @@ public class BeeSpawn : MonoBehaviour
         GameObject bee = Instantiate(beeModel);
         bee.tag = "Bee";
 
-        posx = Random.Range(4.0f , 12.0f);
+        posx = Random.Range(4.0f , 14.5f);
         posy = Random.Range(0.0f ,1.5f);
         posz = 90;
 
@@ -89,6 +96,7 @@ public class BeeSpawn : MonoBehaviour
         bpart.Play();
 
         audioMan.GetAudioOfBee(bee);
+        beeColor.UndamageBee();
 
         bees.Add(bee);
     }
@@ -104,14 +112,14 @@ public class BeeSpawn : MonoBehaviour
         } else
         {
             pos.z = 90;
-            pos.x = Random.Range(3.0f, 10.0f);
+            pos.x = Random.Range(3.0f, 14.5f);
             pos.y = Random.Range(0.0f, 1.5f);
 
             vel += 0.05f;
 
             if (obj.CompareTag("Bee"))
             {
-                score += 100;
+                score += 10;
             } else if (obj.CompareTag("HitBee"))
             {
                 obj.tag = "Bee";
@@ -121,10 +129,16 @@ public class BeeSpawn : MonoBehaviour
         obj.transform.position = pos;
     }
 
+
+
     public void RestartBees()
     {
+        foreach (GameObject bee in bees)
+        {
+            beeColor.UndamageBee();
+        }
 
-        StopAllCoroutines();
+            StopAllCoroutines();
 
         for (int i = 0; i < bees.Count; i++)
         {
@@ -137,6 +151,8 @@ public class BeeSpawn : MonoBehaviour
 
         vel = 7f;
         score = 0;
+        titleScore.SetText("Pontuação");
+        titleScore1.SetText("Pontuação");
         WriteScore();
 
         isPaused = false;
@@ -186,6 +202,18 @@ public class BeeSpawn : MonoBehaviour
 
     public void WriteScore()
     {
-        textScore.SetText("Pontuação: \n" + score);
+        if (score < 9)
+        {
+            textScore.SetText("000" + score.ToString());
+        } else if (score < 99)
+        {
+            textScore.SetText("00" + score.ToString());
+        } else if (score < 999)
+        {
+            textScore.SetText("0" + score.ToString());
+        } else
+        {
+            textScore.SetText(score.ToString());
+        }
     }
 }

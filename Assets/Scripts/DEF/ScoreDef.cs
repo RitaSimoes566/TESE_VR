@@ -4,16 +4,16 @@ using TMPro;
 
 public class ScoreDef : MonoBehaviour
 {
-    public Image[] starImages;   // 5 Image components (grey star sprites)
+    [SerializeField] private Image[] starImages;   // 5 Image components (grey star sprites)
 
-    public Sprite greyStar;
-    public Sprite yellowStar;
+    [SerializeField] public Sprite greyStar;
+    [SerializeField] public Sprite yellowStar;
 
-    public TextMeshProUGUI txt;
-    public StarParticles starPart;
+    [SerializeField] private TextMeshProUGUI txt;
+    [SerializeField] private StarParticles starPart;
 
-    public AudioManager scoreAudio;
-    bool isVictory = false;
+    [SerializeField] private AudioManager scoreAudio;
+    [SerializeField] private bool isVictory = false;
 
     public Flying fly;
 
@@ -23,6 +23,8 @@ public class ScoreDef : MonoBehaviour
         ResetScore();
         txt.SetText("PONTUAÇÃO:");
         starPart.StarsStop();
+
+        fly = fly.GetComponent<Flying>();
     }
 
     void Update()

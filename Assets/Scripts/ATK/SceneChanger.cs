@@ -8,23 +8,23 @@ using Unity.XR.CoreUtils;
 
 public class SceneChanger : MonoBehaviour
 {
-    public GameObject player;
+    //public GameObject player;
 
     public void GoToBranch()
     {
         SceneManager.LoadScene("ATTACK_BRANCH");
-        player.transform.position = new Vector3(-2, 0, 2.8f);
+        //player.transform.position = new Vector3(-2, 0, 2.8f);
     }
 
     public void GoToBasket()
     {
         SceneManager.LoadScene("ATTACK_BASKET");
-        player.transform.position = new Vector3(-2, 0, 2.6f);
+        //player.transform.position = new Vector3(-2, 0, 2.6f);
     }
 
     public void GoToDefense()
     {
-        SceneManager.LoadScene("Defense");
+        SceneManager.LoadScene("Defense 1");
         //player.transform.position = new Vector3(-3.7f, 2, 4f);
     }
 }

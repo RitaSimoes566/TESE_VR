@@ -15,6 +15,10 @@ public class AudioManager : MonoBehaviour
     public AudioClip hurtSfx;
     public AudioClip bgMusic;
 
+    private void Awake()
+    {
+        playerSource.loop = true;
+    }
     public void PlayBgMusic()
     {
         playerSource.clip = bgMusic;
