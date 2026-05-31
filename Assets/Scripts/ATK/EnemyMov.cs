@@ -5,7 +5,10 @@ public class EnemyMov : MonoBehaviour
 {
     [SerializeField] private Animator monsterAnim;
     [SerializeField] private float speed = 2f;
+    [SerializeField] private float waitTime = 5f;
     [SerializeField] private GameObject player;
+
+    [SerializeField] private BallManager ballManager;
     public int scoreAtk;
 
     private void Awake()
@@ -16,10 +19,12 @@ public class EnemyMov : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Ball"))
+        Ball ball = other.GetComponentInChildren<Ball>();
+        if (ball != null)
         {
             scoreAtk += 1;
             monsterAnim.SetBool("isHurt", true);
+            ballManager.ResetPosition(ball);
         }
     }
 
@@ -49,7 +54,7 @@ public class EnemyMov : MonoBehaviour
             monsterAnim.SetBool("isRun", false);
             transform.LookAt(player.transform);
 
-            yield return new WaitForSeconds(7f);
+            yield return new WaitForSeconds(waitTime);
         }
     }
 }

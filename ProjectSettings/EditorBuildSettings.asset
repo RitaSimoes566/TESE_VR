@@ -6,19 +6,19 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/ATTACK/ATTACK_BRANCH.unity
+    path: Assets/Scenes/ATTACK/attack.unity
     guid: 0f5d22008029933419661cb151787346
   - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 55daccc09a3b69647bbab145b54a3ab3
   - enabled: 0
-    path: Assets/Scenes/ATTACK/ATTACK_GRAB.unity
+    path: Assets/Scenes/ATTACK/attack_grab.unity
     guid: f5dca33feca7d02459ef4160bf856314
   - enabled: 0
     path: Assets/Scenes/DEFENSE/Defense.unity
     guid: 8538a24eee5aed24799ce551a8654c48
   - enabled: 0
-    path: Assets/Scenes/ATTACK/ATTACK_BASKET.unity
+    path: Assets/Scenes/ATTACK/attack_basket.unity
     guid: 4a4e8b41e16bf51449ae8f04f104217a
   - enabled: 1
     path: Assets/Scenes/DEFENSE/Defense 1.unity

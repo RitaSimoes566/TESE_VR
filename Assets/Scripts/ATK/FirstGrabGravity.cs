@@ -14,22 +14,33 @@ public class FirstGrabGravity : MonoBehaviour
         grab = GetComponent<XRGrabInteractable>();
 
         rb.useGravity = false;          // start with no gravity
+        rb.isKinematic = true;
         grab.forceGravityOnDetach = true; // make sure gravity is on when dropped
     }
 
     void OnEnable()
     {
         grab.selectEntered.AddListener(OnGrab);
+        grab.selectExited.AddListener(OnRelease);
     }
 
     void OnDisable()
     {
         grab.selectEntered.RemoveListener(OnGrab);
+        grab.selectExited.RemoveListener(OnRelease);
     }
 
     void OnGrab(SelectEnterEventArgs args)
     {
         firstGrabDone = true;
-        rb.useGravity = true;           // from now on, gravity stays enabled
+    }
+
+    void OnRelease(SelectExitEventArgs args)
+    {
+        if (firstGrabDone)
+        {
+            rb.useGravity = true;
+            rb.isKinematic = false;
+        }
     }
 }

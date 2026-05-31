@@ -1,4 +1,4 @@
-using UnityEngine;
+/*using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
@@ -110,7 +110,7 @@ public class Ball_b : MonoBehaviour
         /*if (other.gameObject == gFloor)
         {
             ResetBallB();
-        }*/
+        }
     }
 
     private void OnTriggerExit(Collider other)
@@ -152,4 +152,4 @@ public class Ball_b : MonoBehaviour
 
             }
     }
-}
+}*/
