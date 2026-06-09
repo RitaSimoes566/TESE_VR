@@ -1,19 +1,20 @@
-﻿/*using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
 public class Score : MonoBehaviour
 {
-    public Ball_b ball;          // assign in Inspector
-    public Image[] starImages;   // 5 Image components (grey star sprites)
 
-    public Sprite greyStar;
-    public Sprite yellowStar;
+    [SerializeField] private EnemyMov enemy;
+    [SerializeField] private Image[] starImages;
 
-    public TextMeshProUGUI txt;
-    public StarParticles starPart;
+    [SerializeField] private Sprite greyStar;
+    [SerializeField] private Sprite yellowStar;
 
-    public AudioManager scoreAudio;
+    [SerializeField] private TextMeshProUGUI txt;
+    [SerializeField] private StarParticles starPart;
+
+    [SerializeField] private AudioManager scoreAudio;
     bool isVictory = false;
 
     //public int score;
@@ -21,6 +22,7 @@ public class Score : MonoBehaviour
     void Awake()
     {
         //score = ball.score;
+
 
         // all stars start grey
         ResetScore();
@@ -30,12 +32,12 @@ public class Score : MonoBehaviour
 
     void Update()
     {
-        if (ball.score < starImages.Length)
+        if (enemy.scoreAtk < starImages.Length)
         {
             
             for (int i = 0; i < starImages.Length; i++)
             {
-                if (i < ball.score)        
+                if (i < enemy.scoreAtk)        
                     starImages[i].sprite = yellowStar;
                 else
                     starImages[i].sprite = greyStar;
@@ -51,11 +53,13 @@ public class Score : MonoBehaviour
                 {
                     starImages[i].sprite = yellowStar;
                 }
-                ball.score = starImages.Length + 1;
+                enemy.scoreAtk = starImages.Length + 1;
                 txt.SetText("CONSEGUISTE!");
 
                 starPart.StarsPlay();
                 scoreAudio.Victory();
+
+                enemy.StopCoroutine("MoveCycle");
                 isVictory = true;
             }
 
@@ -64,7 +68,7 @@ public class Score : MonoBehaviour
 
     public void ResetScore()
     {
-        ball.score = 0;
+        enemy.scoreAtk = 0;
 
         for (int i = 0; i < starImages.Length; i++)
         {
@@ -73,7 +77,6 @@ public class Score : MonoBehaviour
 
         txt.SetText("PONTUAÇÃO:");
         isVictory = false;
-
     }
 
-}*/
+}

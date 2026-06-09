@@ -5,6 +5,7 @@ public class BallManager : MonoBehaviour
 {
     [SerializeField] private GameObject ballModel;
     [SerializeField] private int numberBalls = 5;
+    [SerializeField] private AudioManagerAtk audioMan;
 
     public List<GameObject> balls  = new List<GameObject>();
     
@@ -24,6 +25,8 @@ public class BallManager : MonoBehaviour
 
             float rx = Random.Range (-5.0f, 0.0f);
             float rz = Random.Range(2.0f, 4.5f);
+
+            //audioMan.GetAudioOfBall(ball);
 
             ballCode.SpawnBall(rx, rz);
             balls.Add(ball);

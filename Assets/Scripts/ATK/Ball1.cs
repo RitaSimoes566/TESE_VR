@@ -1,4 +1,4 @@
-/*using UnityEngine;
+using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
@@ -50,7 +50,7 @@ public class Ball_b : MonoBehaviour
 
         // get random ball position
         float rx = Random.Range(-5, 0);
-        Vector3 startPos = new Vector3(rx, 1.44f, 5);
+        Vector3 startPos = new Vector3(rx, 2.36f, 5);
         ball.transform.position = startPos;
 
     }
@@ -110,7 +110,7 @@ public class Ball_b : MonoBehaviour
         /*if (other.gameObject == gFloor)
         {
             ResetBallB();
-        }
+        }*/
     }
 
     private void OnTriggerExit(Collider other)
@@ -152,4 +152,4 @@ public class Ball_b : MonoBehaviour
 
             }
     }
-}*/
+}

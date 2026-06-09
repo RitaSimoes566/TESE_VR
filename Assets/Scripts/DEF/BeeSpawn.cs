@@ -85,7 +85,7 @@ public class BeeSpawn : MonoBehaviour
         GameObject bee = Instantiate(beeModel);
         bee.tag = "Bee";
 
-        posx = Random.Range(4.0f , 14.5f);
+        posx = Random.Range(3.1f , 9.0f);
         posy = Random.Range(0.0f ,1.5f);
         posz = 90;
 
@@ -112,7 +112,7 @@ public class BeeSpawn : MonoBehaviour
         } else
         {
             pos.z = 90;
-            pos.x = Random.Range(3.0f, 14.5f);
+            pos.x = Random.Range(3.1f, 9.0f);
             pos.y = Random.Range(0.0f, 1.5f);
 
             vel += 0.05f;
@@ -198,6 +198,7 @@ public class BeeSpawn : MonoBehaviour
 
         audioMan.beeSource.Clear();
         bees.Clear();
+        audioMan.StopBgMusic();
     }
 
     public void WriteScore()

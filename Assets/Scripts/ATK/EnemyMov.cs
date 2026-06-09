@@ -9,12 +9,13 @@ public class EnemyMov : MonoBehaviour
     [SerializeField] private GameObject player;
 
     [SerializeField] private BallManager ballManager;
+    [SerializeField] private ScoreAtk sc;
     public int scoreAtk;
 
     private void Awake()
     {
         scoreAtk = 0;
-        StartCoroutine(MoveCycle());
+        //StartCoroutine("MoveCycle");
     }
 
     private void OnTriggerEnter(Collider other)
@@ -23,8 +24,43 @@ public class EnemyMov : MonoBehaviour
         if (ball != null)
         {
             scoreAtk += 1;
-            monsterAnim.SetBool("isHurt", true);
             ballManager.ResetPosition(ball);
+
+            monsterAnim.SetBool("isHurt", true);   
+            StopCoroutine("MoveCycle");
+        }
+    }
+
+    /*public void MonsterHurt()
+    {
+        StopCoroutine("MoveCycle");
+        scoreAtk += 1;
+        monsterAnim.SetBool("isHurt", true);
+            
+    }*/
+
+    void ReturnWalk()
+    {
+        monsterAnim.SetBool("isHurt", false);
+        monsterAnim.SetBool("isRun", true);
+        StartCoroutine("MoveCycle");
+    }
+
+    public void ResetEnemy()
+    {
+        StopAllCoroutines();
+        StartCoroutine("MoveCycle");
+    }
+
+    public void PauseEnemy()
+    {
+        if (sc.isPaused)
+        {
+            StopAllCoroutines();
+        } else
+        {
+            StopAllCoroutines();
+            ReturnWalk();
         }
     }
 
