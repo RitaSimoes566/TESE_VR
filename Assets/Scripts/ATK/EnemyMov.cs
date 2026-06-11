@@ -57,6 +57,7 @@ public class EnemyMov : MonoBehaviour
         if (sc.isPaused)
         {
             StopAllCoroutines();
+            monsterAnim.SetBool("isRun", false);
         } else
         {
             StopAllCoroutines();

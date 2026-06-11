@@ -67,7 +67,7 @@ public class BallManager : MonoBehaviour
         ball.SpawnBall(pos);
     }
 
-    private void ClearBalls()
+    public void ClearBalls()
     {
         for (int i = 0; i < balls.Count; i++)
         {

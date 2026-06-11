@@ -48,7 +48,7 @@ public class AudioManagerAtk : MonoBehaviour
         scoreSource.Play();
     }*/
 
-    public void Victory()
+    public void VictorySnd()
     {
         timerSource.clip = victorySfx;
         timerSource.Play();
