@@ -20,7 +20,7 @@ public class EnemyMov : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Ball ball = other.GetComponentInChildren<Ball>();
+        Ball ball = other.GetComponent<Ball>();
         if (ball != null)
         {
             scoreAtk += 1;

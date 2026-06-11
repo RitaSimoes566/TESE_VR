@@ -9,6 +9,7 @@ public class ScoreAtk : MonoBehaviour
     [SerializeField] private Timer timer;
     [SerializeField] private TextMeshProUGUI txtScore;
     [SerializeField] private AudioManagerAtk audioAtk;
+    [SerializeField] private BallManager ballMan;
 
     public bool isPaused;
     public bool isPlaying;
@@ -19,6 +20,11 @@ public class ScoreAtk : MonoBehaviour
         isPlaying = false;
     }
 
+    private void Update()
+    {
+        DisplayScoreAtk();
+    }
+
     public void StartAtk()
     {
         isPlaying = true;
@@ -27,6 +33,7 @@ public class ScoreAtk : MonoBehaviour
         timer.ResetTimer();
         enemy.ResetEnemy();
         audioAtk.PlayBgMusic();
+        ballMan.StartBalls();
 
         enemy.scoreAtk = 0;
 
@@ -44,6 +51,6 @@ public class ScoreAtk : MonoBehaviour
 
     public void DisplayScoreAtk()
     {
-        txtScore.SetText( enemy.scoreAtk.ToString() );
+        txtScore.SetText(enemy.scoreAtk.ToString());
     }
 }

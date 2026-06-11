@@ -2,16 +2,17 @@ using UnityEngine;
 
 public class Ball : MonoBehaviour
 {
-    [SerializeField] private GameObject obj;
+    //[SerializeField] private GameObject obj;
     private Rigidbody rb;
     private FirstGrabGravity gra;
+    public Vector3 CurrentSpawnPoint { get; private set; }
 
     [SerializeField] private Material mat;
 
     private void Awake()
     {
-        rb = obj.GetComponent<Rigidbody>();
-        gra = obj.GetComponent<FirstGrabGravity>();
+        rb = GetComponent<Rigidbody>();
+        gra = GetComponent<FirstGrabGravity>();
     
     }
     private void Start()
@@ -21,10 +22,16 @@ public class Ball : MonoBehaviour
         rb.angularVelocity = Vector3.zero;
 
         gra.firstGrabDone = false;
-        obj.tag = "Ball";
+        //obj.tag = "Ball";
     }
 
-    public void SpawnBall (float px, float pz)
+    public void SetCurrentSpawnPoint(Vector3 point)
+    {
+        CurrentSpawnPoint = point;
+    }
+
+
+    public void SpawnBall (Vector3 position)
     { 
 
         rb.useGravity = false;
@@ -33,7 +40,7 @@ public class Ball : MonoBehaviour
 
         gra.firstGrabDone = false;
 
-        obj.transform.position = new Vector3(px, 0.5f, pz);
+        transform.position = position;
        
     }
     

@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 250844084035799140}
   - component: {fileID: 5771420154195114238}
-  - component: {fileID: 7306848320481484359}
   m_Layer: 0
   m_Name: Sphere_COL
   m_TagString: Untagged
@@ -54,20 +53,6 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.005
   m_Center: {x: 0.0000000013969838, y: 0, z: -0.000000001862645}
---- !u!114 &7306848320481484359
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 575240219325052534}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dfe533fedad7f5d41a040bb53e810801, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Ball
-  obj: {fileID: 1505089991625806593}
-  mat: {fileID: 2100000, guid: 76618f7490c40334fa7b685859587d2e, type: 2}
 --- !u!1 &1505089991625806593
 GameObject:
   m_ObjectHideFlags: 0
@@ -82,6 +67,7 @@ GameObject:
   - component: {fileID: 2177138903657835301}
   - component: {fileID: 2137644390527858069}
   - component: {fileID: 8840131944833703375}
+  - component: {fileID: 688545189054520351}
   m_Layer: 0
   m_Name: bALL 2
   m_TagString: Untagged
@@ -394,6 +380,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &688545189054520351
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1505089991625806593}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfe533fedad7f5d41a040bb53e810801, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Ball
+  mat: {fileID: 2100000, guid: 76618f7490c40334fa7b685859587d2e, type: 2}
 --- !u!1 &2984263570276402842
 GameObject:
   m_ObjectHideFlags: 0
