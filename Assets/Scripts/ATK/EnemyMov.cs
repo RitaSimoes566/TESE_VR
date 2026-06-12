@@ -10,11 +10,13 @@ public class EnemyMov : MonoBehaviour
 
     [SerializeField] private BallManager ballManager;
     [SerializeField] private ScoreAtk sc;
+    [SerializeField] private ParticleSystem hurtPart;
     public int scoreAtk;
 
     private void Awake()
     {
         scoreAtk = 0;
+        hurtPart.Stop();
         //StartCoroutine("MoveCycle");
     }
 
@@ -28,6 +30,7 @@ public class EnemyMov : MonoBehaviour
 
             monsterAnim.SetBool("isHurt", true);   
             StopCoroutine("MoveCycle");
+            hurtPart.Play();
         }
     }
 

@@ -35,6 +35,7 @@ public class ScoreAtk : MonoBehaviour
         }
         pauseBtn.interactable = false;
         playBtn.image.sprite = playImg[0];
+        victoryPart.Stop();
     }
 
     private void Update()
