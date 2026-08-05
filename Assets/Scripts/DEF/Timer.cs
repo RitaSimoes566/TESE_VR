@@ -7,32 +7,32 @@ public class Timer : MonoBehaviour
     public float targetTime = 120.0f;
 
     [SerializeField] private TextMeshProUGUI timeDisplay;
-    [SerializeField] private ParticleSystem starPart;
+    [SerializeField] private ParticleSystem endPart;
     [SerializeField] private AudioManager audioM;
 
     public bool isStar;
-    private bool isPaused;
+    public bool timerPause;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        starPart.Stop();
+        endPart.Stop();
         isStar = false;
-        isPaused = true;
+        timerPause = true;
     }
 
     // Update is called once per frame
     void Update()
     {
         //countdown
-        if (targetTime > 0 && !isPaused)
+        if (targetTime > 0 && !timerPause)
         {
             targetTime -= Time.deltaTime;
         }
 
         if(targetTime <= 0.0f && !isStar)
         {
-            starPart.Play();
+            endPart.Play();
             audioM.Victory();
             isStar = true;
         }
@@ -55,12 +55,12 @@ public class Timer : MonoBehaviour
     public void ResetTimer()
     {
         targetTime = 120.0f;
-        isPaused = false;
+        timerPause = false;
         isStar = false;
     }
 
     public void PauseTimer()
     {
-        isPaused = !isPaused;
+        timerPause = !timerPause;
     }
 }

@@ -175,11 +175,13 @@ public class BeeSpawn : MonoBehaviour
                 {
                     ps.Stop();
                     anim.enabled = false;
+                    textScore.SetText("Pausa");
 
                 } else
                 {
                     ps.Play();
                     anim.enabled = true;
+                    WriteScore();
                 }
             }
         } 
@@ -203,18 +205,23 @@ public class BeeSpawn : MonoBehaviour
 
     public void WriteScore()
     {
-        if (score < 9)
-        {
-            textScore.SetText("000" + score.ToString());
-        } else if (score < 99)
-        {
-            textScore.SetText("00" + score.ToString());
-        } else if (score < 999)
-        {
-            textScore.SetText("0" + score.ToString());
-        } else
-        {
-            textScore.SetText(score.ToString());
-        }
+
+            if (score < 9)
+            {
+                textScore.SetText("000" + score.ToString());
+            }
+            else if (score < 99)
+            {
+                textScore.SetText("00" + score.ToString());
+            }
+            else if (score < 999)
+            {
+                textScore.SetText("0" + score.ToString());
+            }
+            else
+            {
+                textScore.SetText(score.ToString());
+            }
+
     }
 }

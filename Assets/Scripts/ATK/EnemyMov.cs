@@ -25,7 +25,7 @@ public class EnemyMov : MonoBehaviour
         Ball ball = other.GetComponent<Ball>();
         if (ball != null)
         {
-            scoreAtk += 1;
+            scoreAtk += 10;
             ballManager.ResetPosition(ball);
 
             monsterAnim.SetBool("isHurt", true);   
