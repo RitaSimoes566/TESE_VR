@@ -3,7 +3,8 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
-    [SerializeField] private BeeSpawn beeManager;
+    //[SerializeField] private BeeSpawn beeManager;
+    [SerializeField] private ButterflySpawn beeManager;
 
     public AudioSource scoreSource;
     public AudioSource playerSource;

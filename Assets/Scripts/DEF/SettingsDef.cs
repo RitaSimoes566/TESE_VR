@@ -9,7 +9,8 @@ public class SettingsDef : MonoBehaviour
     [SerializeField] private Sprite[] playIcons = new Sprite[2];
 
     [SerializeField] private Camera cam;
-    [SerializeField] private BeeSpawn beeMan;
+    //[SerializeField] private BeeSpawn beeMan;
+    [SerializeField] private ButterflySpawn beeMan;
     [SerializeField] private Timer timer;
     [SerializeField] private AudioManager audioMan;
     [SerializeField] private Color blackZero;
