@@ -1,15 +1,16 @@
 using UnityEngine;
+using UnityEngine.UI;
 using System.Collections.Generic;
 using System.Collections;
 using TMPro;
 
 public class ButterflySpawn : MonoBehaviour
 {
-    [SerializeField] int numberCluster = 5;
-    public float vel = 7f;
 
-    [SerializeField] float minDelay = 0.2f;
-    [SerializeField] float maxDelay = 1.0f;
+    [SerializeField] private int numberCluster = 5;
+    public float vel;
+    [SerializeField] private float minDelay = 0.2f;
+    [SerializeField] private float maxDelay = 1.0f;
 
     public GameObject clusterModel;
     public List<GameObject> buttersClu = new List<GameObject>();
@@ -18,13 +19,15 @@ public class ButterflySpawn : MonoBehaviour
     [SerializeField] private TextMeshProUGUI titleScore;
     [SerializeField] private TextMeshProUGUI titleScore1;
     [SerializeField] private Timer timer;
+    [SerializeField] private SettingsDef setDef;
     public bool isPaused;
 
     public int score;
 
     [SerializeField] private AudioManager audioMan;
+    [SerializeField] private Slider velSlider;
 
-    //[SerializeField] private BeeColor beeColor;
+    [SerializeField] private BeeColor beeColor;
 
     private void Awake()
     {
@@ -37,6 +40,7 @@ public class ButterflySpawn : MonoBehaviour
         //beeColor = beeModel.GetComponent<BeeColor>();
         titleScore.SetText("Pontuação");
         titleScore1.SetText("Pontuação");
+        setSlideVel();
     }
 
     //float ms,frs;
@@ -58,6 +62,12 @@ public class ButterflySpawn : MonoBehaviour
             {
                 MoveBee(buttersClu[i]);
             }
+        } else
+        {
+            if (setDef.isStart)
+            {
+                textScore.SetText("Pausa");
+            }
         }
 
         if (timer.targetTime <= 0)
@@ -68,9 +78,9 @@ public class ButterflySpawn : MonoBehaviour
         }
     }
 
-    public void setVel( float butterVel)
+    public void setSlideVel ()
     {
-        vel = butterVel;
+        vel = velSlider.value;
     }
 
     IEnumerator StartSpawnBees()
@@ -105,7 +115,7 @@ public class ButterflySpawn : MonoBehaviour
         bpart.Play();
 
         audioMan.GetAudioOfBee(butterClus);
-        //beeColor.UndamageBee();
+        clusterCode.UndamageCluster();
 
         buttersClu.Add(butterClus);
     }
@@ -132,6 +142,10 @@ public class ButterflySpawn : MonoBehaviour
             } else if (obj.CompareTag("HitBee"))
             {
                 obj.tag = "Bee";
+
+                ButterflyCluster butterClus = obj.GetComponent<ButterflyCluster>();
+                butterClus.UndamageCluster();
+
             }
             WriteScore();
         }
@@ -142,10 +156,11 @@ public class ButterflySpawn : MonoBehaviour
 
     public void RestartBees()
     {
-        /*foreach (GameObject bee in butters)
+        foreach (GameObject cluster in buttersClu)
         {
-            beeColor.UndamageBee();
-        }*/
+            ButterflyCluster clusterCode = cluster.GetComponent<ButterflyCluster>();
+            clusterCode.UndamageCluster();
+        }
 
             StopAllCoroutines();
 
@@ -158,7 +173,7 @@ public class ButterflySpawn : MonoBehaviour
         audioMan.beeSource.Clear();
         buttersClu.Clear();
 
-        vel = 7f;
+        setSlideVel();
         score = 0;
         titleScore.SetText("Pontuação");
         titleScore1.SetText("Pontuação");
@@ -184,7 +199,6 @@ public class ButterflySpawn : MonoBehaviour
                 {
                     ps.Stop();
                     anim.enabled = false;
-                    textScore.SetText("Pausa");
 
                 } else
                 {

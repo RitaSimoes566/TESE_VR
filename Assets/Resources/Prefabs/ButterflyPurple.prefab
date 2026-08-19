@@ -63,6 +63,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 7a0b40dcf84dfd54a8a0e27899062333, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7433974725356343023}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 7a0b40dcf84dfd54a8a0e27899062333, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3684658550319943174}
   m_SourcePrefab: {fileID: 100100000, guid: 7a0b40dcf84dfd54a8a0e27899062333, type: 3}
 --- !u!1 &1384080850440175632 stripped
 GameObject:
@@ -91,3 +94,25 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &3684658550319943174
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1384080850440175632}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aac2ac0bd01134a46bf58dcff1d42f1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BeeColor
+  isRed: 0
+  rend: {fileID: 8937845077045006546}
+  colorPropertyName: _BaseColor
+  hitColor: {r: 1, g: 0, b: 0, a: 1}
+  hitStrength: 0.456
+--- !u!137 &8937845077045006546 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 7205140776170859923, guid: 7a0b40dcf84dfd54a8a0e27899062333, type: 3}
+  m_PrefabInstance: {fileID: 2302561940400340289}
+  m_PrefabAsset: {fileID: 0}

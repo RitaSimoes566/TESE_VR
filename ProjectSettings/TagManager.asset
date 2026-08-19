@@ -8,6 +8,7 @@ TagManager:
   - Anchor
   - Bee
   - HitBee
+  - Dino
   layers:
   - Default
   - TransparentFX

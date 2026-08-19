@@ -70,7 +70,7 @@ public class BeeColor : MonoBehaviour
         }
     }
 
-    /*public void ChangeBee()
+    public void ChangeBee()
     {
         // Call the appropriate function then flip state
         if (isRed)
@@ -83,5 +83,5 @@ public class BeeColor : MonoBehaviour
             DamageBee();
             isRed = true;
         }
-    }*/
+    }
 }

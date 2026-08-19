@@ -3,28 +3,28 @@ using System.Collections.Generic;
 
 public class ButterflyCluster : MonoBehaviour
 {
-    //public float butterVel;
     public GameObject butterModel;
     //public AudioSource butterSound;
 
-    //public float pX, pY, pZ;
     public float radiusCluster = 15;
     public int butterNumber = 10;
-    //public ParticleSystem butterParticle;
     public List<GameObject> butters = new List<GameObject>();
     [SerializeField] private float butterScale = 0.1f;
+    public BeeColor butterColor;
+    private bool clusterRed;
+    
 
-    /*private void Awake()
+    private void Awake()
     {
         SpawnCluster();
-    }*/
+        clusterRed = false;
+    }
 
     public void SpawnCluster()
     {
         for (int i = 0; i < butterNumber; i++)
         {
             // place butterflies inside vluster
-
             float posx, posy, posz;
             GameObject butterfly = Instantiate(butterModel , transform);
 
@@ -47,8 +47,39 @@ public class ButterflyCluster : MonoBehaviour
             butters.Add(butterfly);
         }
 
-        //ParticleSystem bpart = bee.GetComponentInChildren<ParticleSystem>();
-
     }
 
+    public void DamageCluster()
+    {
+        foreach (GameObject butterfly in butters)
+        {
+            BeeColor butterColor = butterfly.GetComponent<BeeColor>();
+            butterColor.DamageBee();
+        }
+    }
+
+    public void UndamageCluster()
+    {
+        foreach (GameObject butterfly in butters)
+        {
+            BeeColor butterColor = butterfly.GetComponent<BeeColor>();
+            butterColor.UndamageBee();
+        }
+    }
+
+
+    public void ChangeCluster()
+    {
+        // Call the appropriate function then flip state
+        if (clusterRed)
+        {
+            UndamageCluster();
+            clusterRed = false;
+        }
+        else
+        {
+            DamageCluster();
+            clusterRed = true;
+        }
+    }
 }

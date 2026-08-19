@@ -1,16 +1,20 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 public class EnemyMov : MonoBehaviour
 {
     [SerializeField] private Animator monsterAnim;
-    [SerializeField] private float speed = 2f;
+    [SerializeField] private float dinoVel = 2f;
     [SerializeField] private float waitTime = 5f;
     [SerializeField] private GameObject player;
 
     [SerializeField] private BallManager ballManager;
     [SerializeField] private ScoreAtk sc;
     [SerializeField] private ParticleSystem hurtPart;
+    [SerializeField] private AudioManagerAtk audioManD;
+    [SerializeField] private Slider sliderVel;
     public int scoreAtk;
 
     private void Awake()
@@ -20,11 +24,17 @@ public class EnemyMov : MonoBehaviour
         //StartCoroutine("MoveCycle");
     }
 
+    public void setDinoVel()
+    {
+        dinoVel = sliderVel.value;
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         Ball ball = other.GetComponent<Ball>();
         if (ball != null)
         {
+            audioManD.BallAudioHit(ball.ballIndex);
             scoreAtk += 10;
             ballManager.ResetPosition(ball);
 
@@ -85,7 +95,7 @@ public class EnemyMov : MonoBehaviour
                 transform.position = Vector3.MoveTowards(
                     transform.position,
                     target,
-                    speed * Time.deltaTime
+                    dinoVel * Time.deltaTime
                 );
                 transform.LookAt(target);
                 yield return null;

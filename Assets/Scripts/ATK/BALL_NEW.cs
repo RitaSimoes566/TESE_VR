@@ -9,11 +9,13 @@ public class Ball : MonoBehaviour
 
     [SerializeField] private Material mat;
 
+    public AudioManagerAtk audioManB;
+    public int ballIndex;
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
         gra = GetComponent<FirstGrabGravity>();
-    
     }
     private void Start()
     {
@@ -32,8 +34,7 @@ public class Ball : MonoBehaviour
 
 
     public void SpawnBall (Vector3 position)
-    { 
-
+    {
         rb.useGravity = false;
         rb.linearVelocity = Vector3.zero;
         rb.angularVelocity = Vector3.zero;
@@ -41,7 +42,17 @@ public class Ball : MonoBehaviour
         gra.firstGrabDone = false;
 
         transform.position = position;
-       
     }
     
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Player")
+            || collision.gameObject.CompareTag("Dino"))
+        {
+            return;
+        }
+
+        audioManB.BallAudioBounce(ballIndex);
+    }
 }

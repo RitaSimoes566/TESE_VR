@@ -1,0 +1,76 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &904300143355086032
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5586062847286022966}
+  - component: {fileID: 5825935058821552798}
+  - component: {fileID: 4691714045608037927}
+  m_Layer: 0
+  m_Name: AudioManagerAtk
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5586062847286022966
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 904300143355086032}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5825935058821552798
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 904300143355086032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6af3851db282dde49a81b7992a6fb22c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AudioManagerAtk
+  ballManager: {fileID: 0}
+  sco: {fileID: 0}
+  timerSource: {fileID: 0}
+  playerSource: {fileID: 0}
+  enemySource: {fileID: 0}
+  ballSource: []
+  victorySfx: {fileID: 8300000, guid: 8abeddd78e912004dac859ff4cd3f077, type: 3}
+  hurtSfx: {fileID: 8300000, guid: 0bc627c0f8e9cb9429b0df880f7f05d0, type: 3}
+  bgMusic: {fileID: 8300000, guid: 6f881b6d8126bb2438c45d3f8ac54afb, type: 3}
+  ballSound:
+  - {fileID: 8300000, guid: 7275442e635a06743a7ff2e9948221bf, type: 3}
+  - {fileID: 8300000, guid: d4e23761eeb15a741a92eeb9bd892d04, type: 3}
+  - {fileID: 8300000, guid: b04e2da28b61011439dfc0ec42dcf7d9, type: 3}
+--- !u!114 &4691714045608037927
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 904300143355086032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 902d15aa0c9e696438bcaec629fb0b65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::VolumeSettings
+  audioMixer: {fileID: 24100000, guid: 35ab8f27bd9babf49b8e25e1fdee88a9, type: 2}
+  masterSlider: {fileID: 0}
+  musicSlider: {fileID: 0}
+  sfxSlider: {fileID: 0}

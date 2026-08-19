@@ -6,7 +6,7 @@ public class ScoreDef_2 : MonoBehaviour
     //[SerializeField] private BeeSpawn beeCode;
     [SerializeField] private ButterflySpawn butterflyCode;
     [SerializeField] private AudioManager audioM;
-    [SerializeField] private BeeColor beeColor;
+
 
     private void OnTriggerEnter(Collider other)
     {
@@ -15,8 +15,10 @@ public class ScoreDef_2 : MonoBehaviour
             other.tag = "HitBee";
             Debug.Log("You have hit a bee :(");
 
+            ButterflyCluster butterClus = other.GetComponent<ButterflyCluster>();
+            butterClus.DamageCluster();
+
             int n = butterflyCode.buttersClu.IndexOf(other.gameObject);
-            beeColor.DamageBee();
             audioM.HurtBee(n);
             
         }

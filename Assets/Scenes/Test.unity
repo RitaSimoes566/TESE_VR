@@ -504,6 +504,17 @@ Camera:
   m_CorrespondingSourceObject: {fileID: 7917674758326848207, guid: 77e7c27b2c5525e4aa8cc9f99d654486, type: 3}
   m_PrefabInstance: {fileID: 237936533}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &445526290 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1249477879004275118, guid: 6acc1ae3f2639534cb783b716c682b1d, type: 3}
+  m_PrefabInstance: {fileID: 1437195688}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18faae1447eba1b4fb94c135dcd06bce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ButterflyCluster
 --- !u!137 &494398895 stripped
 SkinnedMeshRenderer:
   m_CorrespondingSourceObject: {fileID: 4736810321303854171, guid: 508d5e231d5b5834b8ac3a36267b7467, type: 3}
@@ -711,9 +722,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1733061480}
-        m_TargetAssemblyTypeName: BeeColor, Assembly-CSharp
-        m_MethodName: ChangeBee
+      - m_Target: {fileID: 445526290}
+        m_TargetAssemblyTypeName: ButterflyCluster, Assembly-CSharp
+        m_MethodName: ChangeCluster
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -761,6 +772,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 778248458}
   m_CullTransparentMesh: 1
+--- !u!82 &1166928194 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 651093746872836307, guid: 508d5e231d5b5834b8ac3a36267b7467, type: 3}
+  m_PrefabInstance: {fileID: 1213668788}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1213668788
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -809,6 +825,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2455671891529120191, guid: 508d5e231d5b5834b8ac3a36267b7467, type: 3}
+      propertyPath: rend
+      value: 
+      objectReference: {fileID: 494398895}
+    - target: {fileID: 2455671891529120191, guid: 508d5e231d5b5834b8ac3a36267b7467, type: 3}
+      propertyPath: hitStrength
+      value: 0.44
+      objectReference: {fileID: 0}
     - target: {fileID: 3353673962353461666, guid: 508d5e231d5b5834b8ac3a36267b7467, type: 3}
       propertyPath: m_Name
       value: BeeModel
@@ -819,7 +843,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 3353673962353461666, guid: 508d5e231d5b5834b8ac3a36267b7467, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1733061480}
+      addedObject: {fileID: 1733061485}
   m_SourcePrefab: {fileID: 100100000, guid: 508d5e231d5b5834b8ac3a36267b7467, type: 3}
 --- !u!1 &1421112304
 GameObject:
@@ -943,12 +967,84 @@ RectTransform:
   m_AnchoredPosition: {x: -1.384, y: 1.3614397}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1001 &1437195688
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1249477879004275118, guid: 6acc1ae3f2639534cb783b716c682b1d, type: 3}
+      propertyPath: butterColor
+      value: 
+      objectReference: {fileID: 1733061482}
+    - target: {fileID: 3063999536730048101, guid: 6acc1ae3f2639534cb783b716c682b1d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.724
+      objectReference: {fileID: 0}
+    - target: {fileID: 3063999536730048101, guid: 6acc1ae3f2639534cb783b716c682b1d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.513
+      objectReference: {fileID: 0}
+    - target: {fileID: 3063999536730048101, guid: 6acc1ae3f2639534cb783b716c682b1d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 92.87666
+      objectReference: {fileID: 0}
+    - target: {fileID: 3063999536730048101, guid: 6acc1ae3f2639534cb783b716c682b1d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3063999536730048101, guid: 6acc1ae3f2639534cb783b716c682b1d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3063999536730048101, guid: 6acc1ae3f2639534cb783b716c682b1d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3063999536730048101, guid: 6acc1ae3f2639534cb783b716c682b1d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3063999536730048101, guid: 6acc1ae3f2639534cb783b716c682b1d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3063999536730048101, guid: 6acc1ae3f2639534cb783b716c682b1d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3063999536730048101, guid: 6acc1ae3f2639534cb783b716c682b1d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7500300378200560372, guid: 6acc1ae3f2639534cb783b716c682b1d, type: 3}
+      propertyPath: m_Name
+      value: Butterfly Cluster
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6acc1ae3f2639534cb783b716c682b1d, type: 3}
 --- !u!1 &1733061479 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3353673962353461666, guid: 508d5e231d5b5834b8ac3a36267b7467, type: 3}
   m_PrefabInstance: {fileID: 1213668788}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1733061480
+--- !u!114 &1733061482 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2455671891529120191, guid: 508d5e231d5b5834b8ac3a36267b7467, type: 3}
+  m_PrefabInstance: {fileID: 1213668788}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1733061479}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aac2ac0bd01134a46bf58dcff1d42f1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BeeColor
+--- !u!114 &1733061485
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -957,14 +1053,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 1733061479}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aac2ac0bd01134a46bf58dcff1d42f1d, type: 3}
+  m_Script: {fileID: 11500000, guid: 8e33825adedbbe5499bf6bf091c1d2ff, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::HitFlash
-  isRed: 0
-  rend: {fileID: 494398895}
-  colorPropertyName: _BaseColor
-  hitColor: {r: 1, g: 0, b: 0, a: 1}
-  hitStrength: 0.3
+  m_EditorClassIdentifier: Assembly-CSharp::Bee
+  beeColor: {fileID: 1733061482}
+  beeVel: 0
+  beeModel: {fileID: 1733061479}
+  beeSound: {fileID: 1166928194}
+  posX: 0
+  posY: 0
+  posZ: 0
+  beeParticle: {fileID: 1969741459}
 --- !u!1 &1767875493
 GameObject:
   m_ObjectHideFlags: 0
@@ -5801,6 +5900,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+--- !u!198 &1969741459 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 6189914126716085266, guid: 508d5e231d5b5834b8ac3a36267b7467, type: 3}
+  m_PrefabInstance: {fileID: 1213668788}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2004786239
 GameObject:
   m_ObjectHideFlags: 0
@@ -6424,3 +6528,4 @@ SceneRoots:
   - {fileID: 2271405665127900166}
   - {fileID: 1213668788}
   - {fileID: 1421112309}
+  - {fileID: 1437195688}

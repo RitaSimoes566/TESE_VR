@@ -7,6 +7,7 @@ public class BallManager : MonoBehaviour
     [SerializeField] private int numberBalls = 3;
     [SerializeField] private AudioManagerAtk audioMan;
 
+
     public List<GameObject> balls  = new List<GameObject>();
     private Vector3[] spawnPoints = new Vector3[4];
     private List<Vector3> availablePoints = new List<Vector3>();
@@ -45,6 +46,11 @@ public class BallManager : MonoBehaviour
 
             ballCode.SetCurrentSpawnPoint(pos);
             ballCode.SpawnBall(pos);
+
+            ballCode.ballIndex = i;
+            ballCode.audioManB = audioMan;
+
+            audioMan.AddAudioBall(ball);
             balls.Add(ball);
         }
     }

@@ -15,11 +15,13 @@ public class AudioManagerAtk : MonoBehaviour
     [SerializeField] private AudioClip victorySfx;
     [SerializeField] private AudioClip hurtSfx;
     [SerializeField] private AudioClip bgMusic;
+    public List<AudioClip> ballSound = new List<AudioClip>();
 
     private void Awake()
     {
         playerSource.loop = true;
     }
+
     public void PlayBgMusic()
     {
         playerSource.clip = bgMusic;
@@ -54,9 +56,10 @@ public class AudioManagerAtk : MonoBehaviour
         timerSource.Play();
     }
 
-    public void GetAudioOfBall(GameObject BallObj)
+    public void AddAudioBall(GameObject ballObj)
     {
-            ballSource.Add(BallObj.GetComponentInChildren<AudioSource>());
+        AudioSource ballAudio = ballObj.GetComponentInChildren<AudioSource>();
+            ballSource.Add(ballAudio);
     }
 
     public void HurtMonster()
@@ -64,5 +67,25 @@ public class AudioManagerAtk : MonoBehaviour
        //int b = beeCode.bees.IndexOf(gameBee);
         //beeSource[b].clip = hurtSfx;
         //beeSource[b].Play();
+    }
+
+    public void BallAudioHit(int ballIndex)
+    {
+        ballSource[ballIndex].clip = ballSound[0];
+        ballSource[ballIndex].Play();
+    }
+
+    public void BallAudioBounce(int ballIndex)
+    {
+        ballSource[ballIndex].clip = ballSound[1];
+        ballSource[ballIndex].Play();
+    }
+
+    public void BallAudioPickUp( GameObject ballObj )
+    {
+        AudioSource ballAudio = ballObj.GetComponentInChildren<AudioSource>();
+
+        ballAudio.clip = ballSound[2];
+        ballAudio.Play();
     }
 }
