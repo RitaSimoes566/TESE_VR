@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class EnemyMov : MonoBehaviour
 {
-    [SerializeField] private Animator monsterAnim;
+    public Animator monsterAnim;
     [SerializeField] private float dinoVel = 2f;
     [SerializeField] private float waitTime = 5f;
     [SerializeField] private GameObject player;
@@ -17,16 +17,38 @@ public class EnemyMov : MonoBehaviour
     [SerializeField] private Slider sliderVel;
     public int scoreAtk;
 
+    [SerializeField] private float[] velDif = new float[3];
+    [SerializeField] private float[] waitDif = new float[3];
+
     private void Awake()
     {
         scoreAtk = 0;
         hurtPart.Stop();
         //StartCoroutine("MoveCycle");
+        sliderVel.value = 1; // start at medium dif
+        monsterAnim.enabled = false;
     }
 
-    public void setDinoVel()
+    public void setDinoDif()
     {
-        dinoVel = sliderVel.value;
+        int difficulty = Mathf.RoundToInt(sliderVel.value);
+        switch (difficulty)
+        {
+            case 0:
+                dinoVel = velDif[0];
+                waitTime = waitDif[0];
+                break;
+
+            case 1:
+                dinoVel = velDif[1];
+                waitTime = waitDif[1];
+                break;
+
+            case 2:
+                dinoVel = velDif[2];
+                waitTime = waitDif[2];
+                break;
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -61,6 +83,7 @@ public class EnemyMov : MonoBehaviour
 
     public void ResetEnemy()
     {
+        monsterAnim.enabled = true;
         StopAllCoroutines();
         StartCoroutine("MoveCycle");
     }
@@ -70,10 +93,12 @@ public class EnemyMov : MonoBehaviour
         if (sc.isPaused)
         {
             StopAllCoroutines();
+            monsterAnim.enabled = false;
             monsterAnim.SetBool("isRun", false);
         } else
         {
             StopAllCoroutines();
+            monsterAnim.enabled = true;
             ReturnWalk();
         }
     }
@@ -102,7 +127,12 @@ public class EnemyMov : MonoBehaviour
             }
 
             monsterAnim.SetBool("isRun", false);
-            transform.LookAt(player.transform);
+
+            //lock dino rotation
+            var adjusted = player.transform.position;
+            adjusted.y = 0;
+            transform.LookAt(adjusted);
+            
 
             yield return new WaitForSeconds(waitTime);
         }

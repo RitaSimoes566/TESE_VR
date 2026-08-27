@@ -9,16 +9,18 @@ public class VolumeSettings : MonoBehaviour
 
     private void Start()
     {
-        SetMasterVolume();
+        musicSlider.value = 0.5f;
+        sfxSlider.value = 0.5f;
+        //SetMasterVolume();
         SetMusicVolume();
         SetSfxVolume();
     }
 
-    public void SetMasterVolume()
+    /*public void SetMasterVolume()
     {
         float volumeMas = masterSlider.value;
         audioMixer.SetFloat("masterV", Mathf.Log10(volumeMas) * 20);
-    }
+    }*/
     public void SetMusicVolume()
     {
         float volumeMus = musicSlider.value;

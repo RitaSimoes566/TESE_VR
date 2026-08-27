@@ -5098,11 +5098,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1087620122976853360, guid: 7fa3bf29dc63e93419228ecc4d75d931, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1087620122976853360, guid: 7fa3bf29dc63e93419228ecc4d75d931, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1208998534592299355, guid: 7fa3bf29dc63e93419228ecc4d75d931, type: 3}
       propertyPath: m_fontSize
@@ -5122,11 +5122,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1756884895962909035, guid: 7fa3bf29dc63e93419228ecc4d75d931, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1756884895962909035, guid: 7fa3bf29dc63e93419228ecc4d75d931, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2948969336210950150, guid: 7fa3bf29dc63e93419228ecc4d75d931, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -5370,15 +5370,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4658426687293747143, guid: 7fa3bf29dc63e93419228ecc4d75d931, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4658426687293747143, guid: 7fa3bf29dc63e93419228ecc4d75d931, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4658426687293747143, guid: 7fa3bf29dc63e93419228ecc4d75d931, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4766744213139599809, guid: 7fa3bf29dc63e93419228ecc4d75d931, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -5474,15 +5474,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5566226076171265838, guid: 7fa3bf29dc63e93419228ecc4d75d931, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5566226076171265838, guid: 7fa3bf29dc63e93419228ecc4d75d931, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5566226076171265838, guid: 7fa3bf29dc63e93419228ecc4d75d931, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6069490683335596593, guid: 7fa3bf29dc63e93419228ecc4d75d931, type: 3}
       propertyPath: m_RaycastTarget
@@ -5506,11 +5506,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6993153364421449081, guid: 7fa3bf29dc63e93419228ecc4d75d931, type: 3}
       propertyPath: m_Value
-      value: 0.3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6993153364421449081, guid: 7fa3bf29dc63e93419228ecc4d75d931, type: 3}
       propertyPath: m_MaxValue
-      value: 0.3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6993153364421449081, guid: 7fa3bf29dc63e93419228ecc4d75d931, type: 3}
       propertyPath: m_MinValue
@@ -5570,7 +5570,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7559094330073727250, guid: 7fa3bf29dc63e93419228ecc4d75d931, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7613887295825247452, guid: 7fa3bf29dc63e93419228ecc4d75d931, type: 3}
       propertyPath: m_RaycastTarget
@@ -5967,17 +5967,6 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_RenderingLayers: 1
   m_ShadowRenderingLayers: 1
---- !u!114 &178948635 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2812102670069018753, guid: f0ede9dc4be5d9042aed7a26a1a974b8, type: 3}
-  m_PrefabInstance: {fileID: 9207140286615996224}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Slider
 --- !u!1 &221441002
 GameObject:
   m_ObjectHideFlags: 0
@@ -6432,6 +6421,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Settings
   score: {fileID: 1956962599}
   settings: {fileID: 1040984691}
+  vrBtn: {fileID: 1452327164}
+  vrImg:
+  - {fileID: 21300000, guid: fb91828df144d0c45b840085a8409495, type: 3}
+  - {fileID: 21300000, guid: b49b8a4974fbea84f9818aadd69f4468, type: 3}
+  blackZero: {r: 0, g: 0, b: 0, a: 0}
+  cam: {fileID: 863219023}
+  ARcam: {fileID: 863219028}
+  isAR: 0
 --- !u!114 &499313964
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6453,14 +6450,11 @@ MonoBehaviour:
   playIcons:
   - {fileID: 21300000, guid: 52dfce5c78b6d284684434975e3c1a89, type: 3}
   - {fileID: 21300000, guid: 20176be2146c54449965211d5e78e767, type: 3}
-  cam: {fileID: 863219023}
   beeMan: {fileID: 929859618}
   timer: {fileID: 547294726}
   audioMan: {fileID: 1802371125}
-  blackZero: {r: 0, g: 0, b: 0, a: 0}
   timerDisplay: {fileID: 547294733}
   isStart: 0
-  isAR: 0
 --- !u!4 &499313965 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7901546553848235295, guid: 7fa3bf29dc63e93419228ecc4d75d931, type: 3}
@@ -7164,6 +7158,7 @@ MonoBehaviour:
   score: 0
   audioMan: {fileID: 1802371125}
   velSlider: {fileID: 1631327344}
+  beeColor: {fileID: 0}
 --- !u!1 &956887970
 GameObject:
   m_ObjectHideFlags: 0
@@ -8220,6 +8215,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 499313963}
+        m_TargetAssemblyTypeName: Settings, Assembly-CSharp
+        m_MethodName: SwitchVR
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1452327165
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9204,7 +9211,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   audioMixer: {fileID: 24100000, guid: 35ab8f27bd9babf49b8e25e1fdee88a9, type: 2}
-  masterSlider: {fileID: 178948635}
+  masterSlider: {fileID: 0}
   musicSlider: {fileID: 1684805266}
   sfxSlider: {fileID: 1045156978}
 --- !u!1 &1815407560

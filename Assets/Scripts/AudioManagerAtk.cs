@@ -62,12 +62,12 @@ public class AudioManagerAtk : MonoBehaviour
             ballSource.Add(ballAudio);
     }
 
-    public void HurtMonster()
+    /*public void HurtMonster()
     {
        //int b = beeCode.bees.IndexOf(gameBee);
         //beeSource[b].clip = hurtSfx;
         //beeSource[b].Play();
-    }
+    }*/
 
     public void BallAudioHit(int ballIndex)
     {

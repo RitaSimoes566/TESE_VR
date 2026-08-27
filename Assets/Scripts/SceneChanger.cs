@@ -25,7 +25,7 @@ public class SceneChanger : MonoBehaviour
 
     public void GoToDefense()
     {
-        SceneManager.LoadScene("Defense 1");
+        SceneManager.LoadScene("Defense 2");
         player = GameObject.FindGameObjectWithTag("Player");
         player.transform.position = new Vector3(-3.7f, 2, 4f);
     }

@@ -36,7 +36,7 @@ public class ButterflyCluster : MonoBehaviour
                 transform.position.z + radiusCluster);
 
             butterfly.transform.position = new Vector3(posx, posy, posz);
-            butterfly.transform.rotation = Quaternion.Euler(0f, -90f, 0f);
+            butterfly.transform.rotation = Quaternion.Euler(0f, -90f, -40f);
             butterfly.transform.localScale = new Vector3 (butterScale, butterScale, butterScale);
 
             //random delay in animations

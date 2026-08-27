@@ -23,9 +23,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ATTACK/attack 1.unity
     guid: 425d1c730dd2f684098fb67c1ff97487
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/DEFENSE/Defense 1.unity
     guid: e4f02b08819aee7499792c7e4fa4fd0a
+  - enabled: 1
+    path: Assets/Scenes/DEFENSE/Defense 2.unity
+    guid: d79cf309d122a064b89e36edf3fd78b6
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 3e82ac36fa74ba14faca13b42e2c2248, type: 2}
     Unity.XR.WindowsMR.Settings: {fileID: 11400000, guid: dc5a169419fa04987b057f65238cf3ba, type: 2}
