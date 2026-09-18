@@ -15,10 +15,10 @@ public class BallManager : MonoBehaviour
 
     private void Start()
     {
-        spawnPoints[0] = new Vector3(-4.23000002f, 0.202000007f, 4.12699986f);
-        spawnPoints[1] = new Vector3(-3.64100003f, 0.160999998f, 2.9749999f);
-        spawnPoints[2] = new Vector3(-1.91900003f, 0.245000005f, 2.96600008f);
-        spawnPoints[3] = new Vector3(-1.67999995f, 0.187000006f, 3.99000001f);
+        spawnPoints[0] = new Vector3(-1.95299995f, 0.294999987f, 2.36800003f);
+        spawnPoints[1] = new Vector3(-1.66600001f, 0.163000003f, 3.27699995f);
+        spawnPoints[2] = new Vector3(-3.65700006f, 0.317999989f, 2.25f);
+        spawnPoints[3] = new Vector3(-4.1329999f, 0.264999986f, 3.22399998f);
 
         availablePoints = new List<Vector3>(spawnPoints);
     }
@@ -80,7 +80,8 @@ public class BallManager : MonoBehaviour
             if (balls[i] != null)
                 Destroy(balls[i]);
         }
-
+        
         balls.Clear();
+        audioMan.ClearBallAudio();
     }
 }

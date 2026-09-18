@@ -1,12 +1,15 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Rendering;
+using TMPro;
 
 public class SettingsDef : MonoBehaviour
 {
     [SerializeField] private Button timerBtn, playBtn, pauseBtn;
     [SerializeField] private Sprite[] timerIcons = new Sprite[2];
     [SerializeField] private Sprite[] playIcons = new Sprite[2];
+    [SerializeField] private TextMeshProUGUI startTxt;
+    [SerializeField] private string[] txt = new string[2];
 
 
     //[SerializeField] private BeeSpawn beeMan;
@@ -26,12 +29,19 @@ public class SettingsDef : MonoBehaviour
         playBtn.image.sprite = playIcons[0];
         pauseBtn.interactable = false;
         isStart = false;
+        startTxt.SetText(txt[0]);
     }
 
     public void ChangePlaySprite()
     {
         playBtn.image.sprite = playIcons[1];
         pauseBtn.interactable = true;
+        startTxt.SetText(txt[1]);
+;    }
+
+    public void RemovePauseSprite()
+    {
+        pauseBtn.interactable = false;
     }
 
     public void HideTimerDef()

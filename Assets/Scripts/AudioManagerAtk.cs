@@ -15,11 +15,13 @@ public class AudioManagerAtk : MonoBehaviour
     [SerializeField] private AudioClip victorySfx;
     [SerializeField] private AudioClip hurtSfx;
     [SerializeField] private AudioClip bgMusic;
+    [SerializeField] private AudioClip[] footsteps = new AudioClip[2];
     public List<AudioClip> ballSound = new List<AudioClip>();
 
     private void Awake()
     {
         playerSource.loop = true;
+        enemySource.volume = 0.25f;
     }
 
     public void PlayBgMusic()
@@ -87,5 +89,22 @@ public class AudioManagerAtk : MonoBehaviour
 
         ballAudio.clip = ballSound[2];
         ballAudio.Play();
+    }
+
+    public void ClearBallAudio()
+    {
+        ballSource.Clear();
+    }
+
+    public void DinoPlayStepR()
+    {
+        enemySource.clip = footsteps[0];
+        enemySource.Play();
+    }
+
+    public void DinoPlayStepL()
+    {
+        enemySource.clip = footsteps[1];
+        enemySource.Play();
     }
 }

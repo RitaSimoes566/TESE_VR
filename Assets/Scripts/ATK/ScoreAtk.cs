@@ -78,11 +78,12 @@ public class ScoreAtk : MonoBehaviour
 
         victoryPart.Play();
         audioAtk.VictorySnd();
-        
 
         ballMan.ClearBalls();
+        
         enemy.StopAllCoroutines();
         enemy.monsterAnim.enabled = false;
+        enemy.gameObject.SetActive(false);
 
         pauseBtn.image.sprite = buttonImg[1];
         playBtn.image.sprite = buttonImg[2];
@@ -102,6 +103,8 @@ public class ScoreAtk : MonoBehaviour
             isPaused = false;
 
             timer.ResetTimer();
+
+            enemy.gameObject.SetActive(true);
             enemy.ResetEnemy();
             audioAtk.PlayBgMusic();
             ballMan.StartBalls();

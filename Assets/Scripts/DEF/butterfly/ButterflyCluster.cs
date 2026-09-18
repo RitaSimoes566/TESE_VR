@@ -9,24 +9,30 @@ public class ButterflyCluster : MonoBehaviour
     public float radiusCluster = 15;
     public int butterNumber = 10;
     public List<GameObject> butters = new List<GameObject>();
-    [SerializeField] private float butterScale = 0.1f;
+    [SerializeField] private float butterScale;
     public BeeColor butterColor;
     private bool clusterRed;
     
 
     private void Awake()
     {
-        SpawnCluster();
         clusterRed = false;
+        butterScale = 0.04f;
     }
 
     public void SpawnCluster()
     {
+        Vector3 parentWorldScale = transform.lossyScale; // cluster's world scale
+
         for (int i = 0; i < butterNumber; i++)
         {
-            // place butterflies inside vluster
+            // place butterflies inside cluster
             float posx, posy, posz;
-            GameObject butterfly = Instantiate(butterModel , transform);
+            GameObject butterfly = Instantiate(butterModel, Vector3.zero, Quaternion.identity);
+            butterfly.transform.localScale = new Vector3(butterScale, butterScale, butterScale);
+            butterfly.transform.SetParent(transform);
+
+            butterfly.transform.rotation = Quaternion.Euler(0f, -90f, -40f);
 
             posx = Random.Range (transform.position.x - radiusCluster,
                 transform.position.x + radiusCluster);
@@ -36,12 +42,18 @@ public class ButterflyCluster : MonoBehaviour
                 transform.position.z + radiusCluster);
 
             butterfly.transform.position = new Vector3(posx, posy, posz);
-            butterfly.transform.rotation = Quaternion.Euler(0f, -90f, -40f);
-            butterfly.transform.localScale = new Vector3 (butterScale, butterScale, butterScale);
+
+            Vector3 desiredWorldScale = new Vector3(butterScale, butterScale, butterScale);
+            butterfly.transform.localScale = new Vector3(
+                desiredWorldScale.x / parentWorldScale.x,
+                desiredWorldScale.y / parentWorldScale.y,
+                desiredWorldScale.z / parentWorldScale.z);
+    
+
 
             //random delay in animations
             // by starting at different times
-            Animator butterAnim = butterfly.GetComponent<Animator>();
+                Animator butterAnim = butterfly.GetComponent<Animator>();
             butterAnim.Play(0, 0, Random.Range(0f, 1f));
 
             butters.Add(butterfly);

@@ -137,4 +137,14 @@ public class EnemyMov : MonoBehaviour
             yield return new WaitForSeconds(waitTime);
         }
     }
+
+    public void AudioStepR()
+    {
+        audioManD.DinoPlayStepR();
+    }
+
+    public void AudioStepL()
+    {
+        audioManD.DinoPlayStepL();
+    }
 }
