@@ -6743,7 +6743,9 @@ MonoBehaviour:
   vrImg:
   - {fileID: 21300000, guid: fb91828df144d0c45b840085a8409495, type: 3}
   - {fileID: 21300000, guid: b49b8a4974fbea84f9818aadd69f4468, type: 3}
+  blackZero: {r: 0, g: 0, b: 0, a: 0}
   cam: {fileID: 863219023}
+  ARcam: {fileID: 0}
 --- !u!114 &499313964
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9982,7 +9984,7 @@ MonoBehaviour:
   playerSource: {fileID: 13023396}
   beeSource: []
   correctSfx: {fileID: 8300000, guid: a22190eb77f6ea4469e6075504b91eda, type: 3}
-  victorySfx: {fileID: 8300000, guid: 8abeddd78e912004dac859ff4cd3f077, type: 3}
+  victorySfx: {fileID: 8300000, guid: 5debc197b6d874b47968e33e15c8bcdb, type: 3}
   hurtSfx: {fileID: 8300000, guid: 0bc627c0f8e9cb9429b0df880f7f05d0, type: 3}
   bgMusic: {fileID: 8300000, guid: 371449aad9a72de42ba8cef32bef17cf, type: 3}
 --- !u!4 &1802371126
@@ -16022,6 +16024,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -23
       objectReference: {fileID: 0}
+    - target: {fileID: 3532731469459675568, guid: 39a8e64f21832864080edff5773e2bb7, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4054551573120342092, guid: 39a8e64f21832864080edff5773e2bb7, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5653403935339878892, guid: 39a8e64f21832864080edff5773e2bb7, type: 3}
       propertyPath: m_Name
       value: AR Origin Hands (XR Rig)
@@ -16093,6 +16103,10 @@ PrefabInstance:
     - target: {fileID: 6459158570720829646, guid: 39a8e64f21832864080edff5773e2bb7, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6593419038049137152, guid: 39a8e64f21832864080edff5773e2bb7, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8479803307166564514, guid: 39a8e64f21832864080edff5773e2bb7, type: 3}
       propertyPath: m_SizeDelta.x

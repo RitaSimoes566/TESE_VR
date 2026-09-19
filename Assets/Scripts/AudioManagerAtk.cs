@@ -21,7 +21,7 @@ public class AudioManagerAtk : MonoBehaviour
     private void Awake()
     {
         playerSource.loop = true;
-        enemySource.volume = 0.25f;
+        enemySource.volume = 0.35f;
     }
 
     public void PlayBgMusic()

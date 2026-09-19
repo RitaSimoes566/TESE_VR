@@ -110,9 +110,9 @@ public class EnemyMov : MonoBehaviour
             monsterAnim.SetBool("isRun", true);
 
             Vector3 target = new Vector3(
-                Random.Range(-6.0f, 1.0f),
+                Random.Range(-5.8f, 1.3f),
                 transform.position.y,
-                Random.Range(5.8f, 8.5f)
+                Random.Range(7f, 11f)
             );
 
             while (Vector3.Distance(transform.position, target) > 0.01f)
