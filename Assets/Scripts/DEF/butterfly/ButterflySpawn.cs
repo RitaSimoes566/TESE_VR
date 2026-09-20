@@ -210,7 +210,8 @@ public class ButterflySpawn : MonoBehaviour
 
         isPaused = false;
         StartCoroutine(StartSpawnBees());
-        
+        setDef.ResetPauseBtn();
+
     }
 
     public void PauseBees()
@@ -253,7 +254,7 @@ public class ButterflySpawn : MonoBehaviour
         audioMan.beeSource.Clear();
         buttersClu.Clear();
         audioMan.StopBgMusic();
-        setDef.RemovePauseSprite();
+        setDef.ChangePauseSprite();
     }
 
     public void WriteScore()

@@ -22,7 +22,7 @@ public class ScoreAtk : MonoBehaviour
 
     [SerializeField] private GameObject[] hoverPanels = new GameObject[3];
     private TextMeshProUGUI[] uiHoverTxt = new TextMeshProUGUI[3];
-    [SerializeField] private string[] uitxt = new string [5];
+    [SerializeField] private string[] uitxt = new string[5];
 
     public bool isPaused;
     public bool isPlaying;
@@ -80,22 +80,20 @@ public class ScoreAtk : MonoBehaviour
         audioAtk.VictorySnd();
 
         ballMan.ClearBalls();
-        
+
         enemy.StopAllCoroutines();
         enemy.monsterAnim.enabled = false;
         enemy.gameObject.SetActive(false);
 
-        pauseBtn.image.sprite = buttonImg[1];
-        playBtn.image.sprite = buttonImg[2];
+        pauseBtn.image.sprite = buttonImg[2];
+        playBtn.image.sprite = buttonImg[1];
 
-        uiHoverTxt[0].SetText(uitxt[4]);
-        uiHoverTxt[1].SetText(uitxt[1]);
+        uiHoverTxt[0].SetText(uitxt[1]);
+        uiHoverTxt[1].SetText(uitxt[4]);
     }
 
     public void StartAtk()
     {
-        if (timer.targetTime > 0)
-        {
             uiHoverTxt[0].SetText(uitxt[1]);
             uiHoverTxt[1].SetText(uitxt[2]);
 
@@ -119,10 +117,7 @@ public class ScoreAtk : MonoBehaviour
             pauseBtn.interactable = true;
             pauseBtn.image.sprite = buttonImg[3];
             playBtn.image.sprite = buttonImg[1];
-        } else
-        {
-            sceneChanger.GoToDefense();
-        }
+        
     }
 
     public void PauseAtk()
@@ -134,30 +129,12 @@ public class ScoreAtk : MonoBehaviour
             audioAtk.PauseBgMusic();
         }
 
-        if (timer.targetTime <= 0)
+        if (timer.targetTime < 0)
         {
-            isPlaying = true;
-            isPaused = false;
-
-            timer.ResetTimer();
-            enemy.ResetEnemy();
-            audioAtk.PlayBgMusic();
-            ballMan.StartBalls();
-
-            enemy.scoreAtk = 0;
-            for (int i = 0; i < headerScores.Length; i++)
-            {
-                headerScores[i].SetText("Pontuação");
-            }
-            isPart = false;
-
-            pauseBtn.interactable = true;
-            pauseBtn.image.sprite = buttonImg[3];
-            playBtn.image.sprite = buttonImg[1];
-
-            uiHoverTxt[0].SetText(uitxt[1]);
-            uiHoverTxt[1].SetText(uitxt[2]);
+            sceneChanger.GoToDefense();
         }
+
+        
     }
 
     public void ForcePause()

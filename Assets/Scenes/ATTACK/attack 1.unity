@@ -541,6 +541,8 @@ MonoBehaviour:
   masterSlider: {fileID: 0}
   musicSlider: {fileID: 1318421545}
   sfxSlider: {fileID: 1666924769}
+  musValue: -15
+  sfxValue: -5
 --- !u!1 &575606797 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3737091728085589099, guid: 7fee7c48ab477ff449b579b66a517156, type: 3}
@@ -8442,7 +8444,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5653403935339878895, guid: 39a8e64f21832864080edff5773e2bb7, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.72
+      value: 3.56
       objectReference: {fileID: 0}
     - target: {fileID: 5653403935339878895, guid: 39a8e64f21832864080edff5773e2bb7, type: 3}
       propertyPath: m_LocalRotation.w
@@ -9887,8 +9889,8 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
+  MinDistance: 0.6768955
+  MaxDistance: 20
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -11243,6 +11245,10 @@ PrefabInstance:
       propertyPath: timerBtn
       value: 
       objectReference: {fileID: 1520783191}
+    - target: {fileID: 7607524354948093649, guid: 7fee7c48ab477ff449b579b66a517156, type: 3}
+      propertyPath: targetTime
+      value: 120
+      objectReference: {fileID: 0}
     - target: {fileID: 7607524354948093649, guid: 7fee7c48ab477ff449b579b66a517156, type: 3}
       propertyPath: timerCanvas
       value: 

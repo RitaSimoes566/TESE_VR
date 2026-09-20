@@ -6745,7 +6745,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: b49b8a4974fbea84f9818aadd69f4468, type: 3}
   blackZero: {r: 0, g: 0, b: 0, a: 0}
   cam: {fileID: 863219023}
-  ARcam: {fileID: 0}
+  ARcam: {fileID: 863219028}
 --- !u!114 &499313964
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6767,13 +6767,21 @@ MonoBehaviour:
   playIcons:
   - {fileID: 21300000, guid: 52dfce5c78b6d284684434975e3c1a89, type: 3}
   - {fileID: 21300000, guid: 20176be2146c54449965211d5e78e767, type: 3}
-  startTxt: {fileID: 1737648651}
+  pauseIcons:
+  - {fileID: 21300000, guid: bc66cabc6e500e645b9ace0f2cdebcf0, type: 3}
+  - {fileID: 21300000, guid: 217a0dc5549f38a42b91ab6fec99844f, type: 3}
+  startTxt:
+  - {fileID: 1737648651}
+  - {fileID: 1438837809}
   txt:
   - "Come\xE7ar"
   - "Recome\xE7ar"
+  - Pausa
+  - Anterior
   beeMan: {fileID: 929859618}
   timer: {fileID: 547294726}
   audioMan: {fileID: 1802371125}
+  sceneChange: {fileID: 1311193373}
   timerDisplay: {fileID: 547294733}
   isStart: 0
 --- !u!4 &499313965 stripped
@@ -6807,7 +6815,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &543055395
 Transform:
   m_ObjectHideFlags: 0
@@ -10018,6 +10026,8 @@ MonoBehaviour:
   masterSlider: {fileID: 0}
   musicSlider: {fileID: 1684805266}
   sfxSlider: {fileID: 1045156978}
+  musValue: -15
+  sfxValue: -0
 --- !u!1 &1815407560
 GameObject:
   m_ObjectHideFlags: 0

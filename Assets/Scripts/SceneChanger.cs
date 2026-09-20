@@ -29,4 +29,11 @@ public class SceneChanger : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         player.transform.position = new Vector3(-3.7f, 2, 4f);
     }
+
+    public void GoToAttack()
+    {
+        SceneManager.LoadScene("Attack 1");
+        player = GameObject.FindGameObjectWithTag("Player");
+        player.transform.position = new Vector3(-2.79f, 2, 3.56f);
+    }
 }

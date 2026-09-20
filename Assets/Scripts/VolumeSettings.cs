@@ -6,11 +6,14 @@ public class VolumeSettings : MonoBehaviour
 {
     [SerializeField] private AudioMixer audioMixer;
     [SerializeField] private Slider masterSlider, musicSlider, sfxSlider;
+    [SerializeField] private float musValue = -15f;
+    [SerializeField] private float sfxValue = -0f;
 
     private void Start()
     {
-        musicSlider.value = 0.5f;
-        sfxSlider.value = 0.5f;
+        musValue = -15f;
+        sfxValue = 0f;
+
         //SetMasterVolume();
         SetMusicVolume();
         SetSfxVolume();
@@ -24,11 +27,11 @@ public class VolumeSettings : MonoBehaviour
     public void SetMusicVolume()
     {
         float volumeMus = musicSlider.value;
-        audioMixer.SetFloat("musicV", Mathf.Log10(volumeMus) * 20);
+        audioMixer.SetFloat("musicV", (Mathf.Log10(volumeMus) * 20) + musValue);
     }
     public void SetSfxVolume()
     {
         float volumeSfx = sfxSlider.value;
-        audioMixer.SetFloat("sfxV", Mathf.Log10(volumeSfx) * 20);
+        audioMixer.SetFloat("sfxV", (Mathf.Log10(volumeSfx) * 20) + sfxValue);
     }
 }

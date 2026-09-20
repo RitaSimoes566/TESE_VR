@@ -8,14 +8,17 @@ public class SettingsDef : MonoBehaviour
     [SerializeField] private Button timerBtn, playBtn, pauseBtn;
     [SerializeField] private Sprite[] timerIcons = new Sprite[2];
     [SerializeField] private Sprite[] playIcons = new Sprite[2];
-    [SerializeField] private TextMeshProUGUI startTxt;
-    [SerializeField] private string[] txt = new string[2];
+    [SerializeField] private Sprite[] pauseIcons = new Sprite[2];
+
+    [SerializeField] private TextMeshProUGUI[] startTxt = new TextMeshProUGUI [2];
+    [SerializeField] private string[] txt = new string[4];
 
 
     //[SerializeField] private BeeSpawn beeMan;
     [SerializeField] private ButterflySpawn beeMan;
     [SerializeField] private Timer timer;
     [SerializeField] private AudioManager audioMan;
+    [SerializeField] private SceneChanger sceneChange;
 
 
     [SerializeField] CanvasGroup timerDisplay;
@@ -24,24 +27,31 @@ public class SettingsDef : MonoBehaviour
 
     private void Awake()
     {
-
         showTimer = true;
         playBtn.image.sprite = playIcons[0];
         pauseBtn.interactable = false;
         isStart = false;
-        startTxt.SetText(txt[0]);
+        startTxt[0].SetText(txt[0]);
+        startTxt[1].SetText(txt[2]);
+        pauseBtn.image.sprite = pauseIcons[0];
     }
 
     public void ChangePlaySprite()
     {
         playBtn.image.sprite = playIcons[1];
         pauseBtn.interactable = true;
-        startTxt.SetText(txt[1]);
+        startTxt[0].SetText(txt[1]);
 ;    }
 
-    public void RemovePauseSprite()
+    public void ChangePauseSprite()
     {
-        pauseBtn.interactable = false;
+        pauseBtn.image.sprite = pauseIcons[1];
+        startTxt[1].SetText(txt[3]);
+    }
+
+    public void ResetPauseBtn()
+    {
+        startTxt[1].SetText(txt[2]);
     }
 
     public void HideTimerDef()
@@ -67,14 +77,21 @@ public class SettingsDef : MonoBehaviour
         beeMan.RestartBees();
         timer.ResetTimer();
         audioMan.PlayBgMusic();
-
+        pauseBtn.image.sprite = pauseIcons[0];
     }
 
     public void PauseDef()
     {
-        beeMan.PauseBees();
-        timer.PauseTimer();
-        audioMan.PauseBgMusic();
+        if (timer.targetTime > 0)
+        {
+            beeMan.PauseBees();
+            timer.PauseTimer();
+            audioMan.PauseBgMusic();
+        } else
+
+        {
+            sceneChange.GoToAttack();
+        }
     }
 
     public void ForcePauseDef()
