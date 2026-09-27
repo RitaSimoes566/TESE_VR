@@ -4,6 +4,9 @@ using UnityEngine.XR.ARFoundation;
 
 public class Settings : MonoBehaviour
 {
+    [SerializeField] private GameObject tutorialCard;
+    [SerializeField] private GameObject scoreCard;
+
     [SerializeField] private GameObject score;
     [SerializeField] private GameObject settings;
 
@@ -17,7 +20,6 @@ public class Settings : MonoBehaviour
     {
         ARcam = cam.GetComponent<ARCameraManager>();
         vrBtn.image.sprite = vrImg[0];
-        
     }
 
     private void Start()
@@ -35,6 +37,12 @@ public class Settings : MonoBehaviour
     {
         score.SetActive(false);
         settings.SetActive(true);
+    }
+
+    public void ShowTutorial()
+    {
+        tutorialCard.SetActive(true);
+        scoreCard.SetActive(false);
     }
 
     public void SwitchVR()

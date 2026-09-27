@@ -1,17 +1,23 @@
 using UnityEngine;
 using UnityEngine.UI;
+
 using UnityEngine.Video;
 using System.Collections.Generic;
 using TMPro;
+
 public class TutorialUI : MonoBehaviour
 {
     [SerializeField] GameObject tutCard;
+    [SerializeField] GameObject scoreCard;
     [SerializeField] Button[] uiBtn = new Button[2];
     //[SerializeField] List<Image> imgTutorial = new List<Image>();
 
     [SerializeField] VideoPlayer videoPlayer;
     [SerializeField] List<VideoClip> tutClips = new List<VideoClip>();
     [SerializeField] List<TextMeshProUGUI> txtTutorial = new List<TextMeshProUGUI>();
+
+    [SerializeField] List<Image> dotImg = new List<Image>();
+    [SerializeField] Sprite[] dotSprite = new Sprite[2];
 
     private int currentIndex = 0;
     private int maxIndex;
@@ -24,6 +30,9 @@ public class TutorialUI : MonoBehaviour
         Debug.Log(maxIndex);
         Debug.Log(currentIndex);
         DisplayTut(currentIndex);
+
+        tutCard.SetActive(false);
+        scoreCard.SetActive(true);
     }
 
     // Update is called once per frame
@@ -74,9 +83,11 @@ public class TutorialUI : MonoBehaviour
             if (index == i)
             {
                 txtTutorial[i].enabled = true;
+                dotImg[i].sprite = dotSprite[1];
             } else
             {
                 txtTutorial[i].enabled = false;
+                dotImg[i].sprite = dotSprite[0];
             }
         }
         videoPlayer.clip = tutClips[index];
@@ -85,6 +96,8 @@ public class TutorialUI : MonoBehaviour
 
     public void QuitTutorial()
     {
+        scoreCard.SetActive(true);
         tutCard.SetActive(false);
+        
     }
 }

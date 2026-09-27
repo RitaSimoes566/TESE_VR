@@ -24,6 +24,9 @@ public class ScoreAtk : MonoBehaviour
     private TextMeshProUGUI[] uiHoverTxt = new TextMeshProUGUI[3];
     [SerializeField] private string[] uitxt = new string[5];
 
+    [SerializeField] private GameObject tutorialCard;
+    [SerializeField] private GameObject scoreCard;
+
     public bool isPaused;
     public bool isPlaying;
     private bool isPart;
@@ -39,9 +42,9 @@ public class ScoreAtk : MonoBehaviour
             headerScores[i].SetText("Pontuação");
         }
 
-        pauseBtn.interactable = false;
-        playBtn.image.sprite = buttonImg[3];
+        //pauseBtn.interactable = false;
         playBtn.image.sprite = buttonImg[0];
+        pauseBtn.image.sprite = buttonImg[4];
         victoryPart.Stop();
 
         for (int i = 0; i < hoverPanels.Length; i++)
@@ -50,8 +53,10 @@ public class ScoreAtk : MonoBehaviour
         }
 
         uiHoverTxt[0].SetText(uitxt[0]);
-        uiHoverTxt[1].SetText(uitxt[2]);
+        uiHoverTxt[1].SetText(uitxt[5]);
         uiHoverTxt[2].SetText(uitxt[3]);
+
+        tutorialCard.SetActive(false);
     }
 
     private void Update()
@@ -114,7 +119,6 @@ public class ScoreAtk : MonoBehaviour
             }
             isPart = false;
 
-            pauseBtn.interactable = true;
             pauseBtn.image.sprite = buttonImg[3];
             playBtn.image.sprite = buttonImg[1];
         
@@ -127,6 +131,12 @@ public class ScoreAtk : MonoBehaviour
             isPaused = !isPaused;
             enemy.PauseEnemy();
             audioAtk.PauseBgMusic();
+        } 
+
+        if (!isPlaying && timer.targetTime > 0)
+        {
+            tutorialCard.SetActive(true);
+            scoreCard.SetActive(false);
         }
 
         if (timer.targetTime < 0)

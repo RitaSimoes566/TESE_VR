@@ -237,7 +237,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -498,7 +498,7 @@ MonoBehaviour:
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 1, g: 0, b: 0, a: 1}
+    m_DisabledColor: {r: 0.631, g: 0.631, b: 0.631, a: 0.14117648}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -725,7 +725,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -800,7 +800,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -1013,7 +1013,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -1190,7 +1190,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -1558,7 +1558,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -1675,7 +1675,7 @@ MonoBehaviour:
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 1, g: 0, b: 0, a: 1}
+    m_DisabledColor: {r: 0.63, g: 0.63, b: 0.63, a: 0.14117648}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -1848,7 +1848,7 @@ VideoPlayer:
   m_RenderMode: 2
   m_AspectRatio: 2
   m_DataSource: 0
-  m_TimeUpdateMode: 2
+  m_TimeUpdateMode: 0
   m_PlaybackSpeed: 1
   m_AudioOutputMode: 0
   m_TargetAudioSources:
@@ -1860,9 +1860,9 @@ VideoPlayer:
   m_DirectAudioMutes: 00
   m_ControlledAudioTrackCount: 1
   m_PlayOnAwake: 1
-  m_SkipOnDrop: 0
+  m_SkipOnDrop: 1
   m_Looping: 1
-  m_WaitForFirstFrame: 0
+  m_WaitForFirstFrame: 1
   m_FrameReadyEventEnabled: 0
   m_VideoShaders: []
 --- !u!1 &8659845433374938872
@@ -1916,12 +1916,12 @@ MonoBehaviour:
   - {fileID: 6977254898619167636}
   videoPlayer: {fileID: 7299825846590067580}
   tutClips:
-  - {fileID: 32900000, guid: 6cd4dbfa89595474a95b39773850701e, type: 3}
   - {fileID: 32900000, guid: 6040b35b4a83d934b8fb9dca6072be42, type: 3}
+  - {fileID: 32900000, guid: 96cae6f0a0eb12541b7832e6a545aef1, type: 3}
+  - {fileID: 32900000, guid: 96cae6f0a0eb12541b7832e6a545aef1, type: 3}
   - {fileID: 32900000, guid: 6cd4dbfa89595474a95b39773850701e, type: 3}
-  - {fileID: 32900000, guid: 6040b35b4a83d934b8fb9dca6072be42, type: 3}
-  - {fileID: 32900000, guid: 6cd4dbfa89595474a95b39773850701e, type: 3}
-  - {fileID: 32900000, guid: 6040b35b4a83d934b8fb9dca6072be42, type: 3}
+  - {fileID: 32900000, guid: 963839add39114d4499c8d48641978e6, type: 3}
+  - {fileID: 32900000, guid: 1032770538fe72c4a8869fbe6ecf4014, type: 3}
   txtTutorial:
   - {fileID: 5147210130156549830}
   - {fileID: 7103513623642254000}
@@ -1929,6 +1929,16 @@ MonoBehaviour:
   - {fileID: 9182279839110198353}
   - {fileID: 6629734835220861395}
   - {fileID: 3384486139530376165}
+  dotImg:
+  - {fileID: 5102989534651873431}
+  - {fileID: 5684835596664296836}
+  - {fileID: 475845497308507996}
+  - {fileID: 8657548307374832638}
+  - {fileID: 7752528145840288671}
+  - {fileID: 6450680283287233342}
+  dotSprite:
+  - {fileID: 21300000, guid: 84eb550972212aa44ba5cf10c90e78ea, type: 3}
+  - {fileID: 21300000, guid: 32467ac34e598a74b96b91a8761f3ca0, type: 3}
 --- !u!1 &8734974937085775556
 GameObject:
   m_ObjectHideFlags: 0

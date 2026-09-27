@@ -32,7 +32,7 @@ public class TimerAtk : MonoBehaviour
     void Update()
     {
         //countdown
-        if (targetTime > 0 && score.isPaused == false)
+        if (targetTime > 0 && score.isPaused == false && score.isPlaying)
         {
             targetTime -= Time.deltaTime;
         }
