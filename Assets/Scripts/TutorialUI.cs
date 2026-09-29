@@ -98,6 +98,7 @@ public class TutorialUI : MonoBehaviour
     {
         scoreCard.SetActive(true);
         tutCard.SetActive(false);
-        
+        currentIndex = 0;
+        DisplayTut(currentIndex);
     }
 }

@@ -7,7 +7,7 @@ using TMPro;
 public class ButterflySpawn : MonoBehaviour
 {
 
-    [SerializeField] private int numberCluster = 5;
+    [SerializeField] private int numberCluster;
     public float vel;
     [SerializeField] private float minDelay;
     [SerializeField] private float maxDelay;
@@ -44,6 +44,7 @@ public class ButterflySpawn : MonoBehaviour
         titleScore1.SetText("Pontuação");
         velSlider.value = 2;
         SetDiffDef();
+        numberCluster = 7;
     }
 
     //float ms,frs;
@@ -86,21 +87,21 @@ public class ButterflySpawn : MonoBehaviour
         switch (velSlider.value)
         {
             case 1:
-                minDelay = 0.2f;
-                maxDelay = 2.5f;
+                minDelay = 1f;
+                maxDelay = 20f;
                 vel = 3f;
                 break;
 
             case 2:
                 minDelay = 0.2f;
-                maxDelay = 1.5f;
-                vel = 4f;
+                maxDelay = 5.0f;
+                vel = 5f;
                 break;
 
             case 3:
                 minDelay = 0.2f;
-                maxDelay = 1.0f;
-                vel = 5f;
+                maxDelay = 5.0f;
+                vel = 6f;
                 break;
         }
     }
@@ -132,7 +133,7 @@ public class ButterflySpawn : MonoBehaviour
         butterClus.tag = "Bee";
 
         posx = Random.Range(3.1f , 9.0f);
-        posy = Random.Range(0.5f ,2.0f);
+        posy = Random.Range(0.6f ,2.5f);
         posz = 90;
 
         butterClus.transform.position = new Vector3 (posx, posy, posz);

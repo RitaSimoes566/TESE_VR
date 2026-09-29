@@ -51,12 +51,14 @@ public class Settings : MonoBehaviour
         {
             ARcam.enabled = false;
             RenderSkybox(cam);
+            vrBtn.image.sprite = vrImg[1];
         }
         else
         {
             ARcam.enabled = true;
             Color b = new (0, 0, 0, 0);
             RenderColor(b ,cam);
+            vrBtn.image.sprite = vrImg[0];
         }
         
     }
